@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="es" data-edition="template" data-installation="compartida-v4-primera"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" type="image/png" href="icon-192.png">
+<meta name="theme-color" content="#173b50"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Kit Familiar"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="color-scheme" content="light"><meta name="referrer" content="no-referrer">
+<title>Kit Emergencia: Plan Familiar</title>
+<style>
+:root{--ink:#193342;--muted:#627882;--blue:#16465a;--green:#00746c;--mint:#ebf7f4;--paper:#fff;--page:#eff4f5;--line:#d4e1e4;--amber:#fff6e8;font:14px/1.42 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--page)}
+*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #21a99c;outline-offset:2px}button:disabled{opacity:.5;cursor:not-allowed}h1,h2,h3,p{margin-top:0}.wrap{width:min(1510px,100%);margin:auto;padding:0 18px}.hero{background:#173b50;color:#fff;padding:18px 0}.hero h1{font-size:clamp(1.4rem,2.5vw,2.1rem);margin:3px 0 5px;letter-spacing:-.03em}.hero p{margin:0;color:#d6e9e9}.kicker{color:#8bd7c8;text-transform:uppercase;font-size:.74rem;letter-spacing:.11em;font-weight:800}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.chips span{border:1px solid #ffffff56;border-radius:20px;padding:3px 9px;font-size:.82rem;background:#ffffff0d}.bar{display:flex;gap:9px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:13px 0}.bar>span{font-size:.8rem;color:#496c74}.actions,.formrow,.inline{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.btn{border:1px solid #c8d5d8;background:#fff;color:#1b4050;border-radius:8px;padding:7px 11px;font-weight:680}.btn:hover{background:#ebf6f4}.btn.main{background:#00746c;border-color:#00746c;color:#fff}.btn.main:hover{background:#00655e}.btn.small{font-size:.77rem;padding:4px 7px}.btn.warn{color:#9e3b31}.badge{font-size:.73rem;color:#657982;border-radius:5px;background:#eef4f4;padding:3px 6px}.toggle{background:#f8fbfb;border:1px solid #d1dfe0;border-radius:9px;padding:6px 9px}.toggle strong{display:block;font-size:.75rem;color:#60747c}.num{width:66px;text-align:center}.field{border:1px solid #bcced2;border-radius:7px;padding:7px 8px;background:white;color:var(--ink);min-width:0}.tabs{display:flex;gap:6px;margin:5px 0 12px;border-bottom:1px solid var(--line)}.tab{flex:1;border:1px solid var(--line);border-bottom:0;background:#f8fbfc;border-radius:9px 9px 0 0;padding:10px 6px;color:#34535f;font-weight:750}.tab[aria-selected=true]{border-top:3px solid #00746c;padding-top:8px;background:#fff;color:#0d3e4d}.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px;margin-bottom:12px}.headerline{display:flex;align-items:start;justify-content:space-between;gap:10px;flex-wrap:wrap}.headerline h2{font-size:1.16rem;margin:0}.hint{color:var(--muted);font-size:.83rem;margin:6px 0 0}.config{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.stats{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 0}.metric{background:#f2f6f7;border:1px solid #d9e5e6;border-radius:7px;padding:6px 9px;font-size:.82rem}.metric strong{font-variant-numeric:tabular-nums}.metric.ok{background:#e9f6f0}.metric.warn{background:#fff6ea}.search{flex:1;min-width:180px}.catalog{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:10px}.group{background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}.group>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:11px;background:var(--mint);color:#18474e;font-weight:760}.group>summary::-webkit-details-marker{display:none}.group>summary:before{content:'▸';margin-right:1px}.group[open]>summary:before{content:'▾'}.count{font-size:.75rem;color:#667a82;margin-left:auto;font-weight:650}.item{border-top:1px solid #e9eeef;padding:8px 10px}.itemTop{display:flex;align-items:start;justify-content:space-between;gap:6px}.itemName{font-size:.87rem;font-weight:720}.miniTag{font-size:.68rem;border:1px solid #dae6e7;border-radius:4px;padding:1px 4px;white-space:nowrap;color:#56747a}.quantity{font-size:.76rem;color:#576e78;margin-top:3px}.ctrl{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:6px}.status{min-width:113px;max-width:172px;flex:1;border-radius:7px;padding:5px 6px;border:1px solid #bdcfd1;background:#fff;font-size:.79rem}.status.tengo{background:#e7f6eb}.status.comprar{background:#fff1df}.status.preparar{background:#eaf4ff}.item details{margin-top:5px}.item details>summary{font-size:.75rem;color:#557279;cursor:pointer}.item details p{color:#5b6e75;font-size:.78rem;margin:4px 0 1px;white-space:pre-wrap}.empty{background:white;border:1px solid var(--line);border-radius:10px;padding:20px;text-align:center;color:var(--muted)}.subpanels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.box{border:1px solid var(--line);border-radius:10px;background:#fff;padding:14px;margin-bottom:12px}.box h3{font-size:1.05rem;margin:0 0 5px}.tip{font-size:.84rem;color:var(--muted)}label.fieldlabel{display:flex;flex-direction:column;gap:4px;min-width:0;font-size:.79rem;color:#455e68;font-weight:700}.fieldlabel input,.fieldlabel select,.fieldlabel textarea{width:100%}.fieldlabel textarea{min-height:56px;resize:vertical}.editgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.wide{grid-column:1/-1}.planopts{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}.pill{border-radius:18px;border:1px solid #c6d8db;background:#fff;padding:7px 12px;font-weight:650}.pill.active{background:#173b50;color:#fff}.step{display:grid;grid-template-columns:27px minmax(0,1fr) auto;align-items:center;gap:7px;padding:6px 0;border-bottom:1px solid #e9efef}.step span{color:#638089;font-weight:700}.step input{width:100%}.newstep{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}.newstep input{flex:1;min-width:160px}.tableline{display:flex;justify-content:space-between;align-items:center;gap:8px;border-bottom:1px solid #e6eeee;padding:9px 2px}.tableline small{color:#657b80}.split{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mapimg{width:100%;max-height:380px;object-fit:contain;border:1px solid var(--line);background:#f0f3f4;border-radius:8px}.mapimg[hidden]{display:none}.filecaption{font-size:.8rem;color:var(--muted)}.footer{font-size:.8rem;color:#586d75;padding:12px 0 28px}.hidden{display:none!important}.dialog{border:1px solid #c5d6d9;border-radius:13px;width:min(620px,96vw);padding:0;box-shadow:0 20px 65px #1a33483d}.dialog::backdrop{background:#132c3a80}.dialoghead{padding:15px;border-bottom:1px solid #e7eeee}.dialoghead h2{margin:0;font-size:1.17rem}.dialogbody{padding:14px}.dialogfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:15px}.notice{font-size:.81rem;background:#f0f6f6;border-radius:8px;padding:9px 10px;color:#3c626c;margin:7px 0}.toast{position:fixed;right:16px;bottom:15px;display:none;padding:11px 15px;border-radius:9px;background:#183b48;color:white;box-shadow:0 6px 20px #1b32375c;z-index:10}.toast.show{display:block}#paper{display:none}
+@media(max-width:1160px){.catalog{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:690px){.catalog,.split,.subpanels,.editgrid{grid-template-columns:1fr}.tabs{flex-wrap:wrap}.tab{flex:1 1 31%}.wrap{padding:0 10px}.bar .actions{width:100%}.bar .actions button{flex:1}.hero{padding:15px 0}.num{width:54px}.panel{padding:10px}.wide{grid-column:1}.step{grid-template-columns:20px minmax(0,1fr)}.step .inline{grid-column:2}}
+@media print{@page{size:A4;margin:14mm 12mm}body{background:#fff!important;color:#111!important;font:11pt/1.36 Arial,sans-serif!important}body>*:not(#paper){display:none!important}#paper{display:block!important}.ph{border-bottom:2px solid #333;margin-bottom:12px;padding-bottom:8px}.ph small{font-size:8pt;text-transform:uppercase;letter-spacing:.1em}.ph h1{font-size:18pt;margin:4px 0}.printmeta{font-size:9pt;color:#555}.printnote{font-size:10pt;padding:6px 0 10px}.printrow{display:flex;gap:9px;align-items:start;border-bottom:1px solid #ddd;padding:6px 0;break-inside:avoid;font-size:10pt}.sq{border:1.5px solid #222;width:15px;height:15px;display:inline-block;flex:0 0 15px;margin-top:1px}.printgroup{break-inside:avoid;margin:0 0 10px}.printgroup h2{font-size:12pt;margin:11px 0 5px;border-bottom:1px solid #bbb}.printitem{font-size:9.5pt;padding:4px 0;border-bottom:1px solid #eee;break-inside:avoid}.printitem b{display:inline-block}.printitem em{float:right;font-size:8.5pt;color:#444}.printmap{max-width:100%;max-height:165mm;object-fit:contain;display:block;margin:8px 0;border:1px solid #ddd}.printfooter{border-top:1px solid #999;font-size:9pt;margin-top:12px;padding-top:8px}}
+#exitModeWrap[hidden]{display:none}.quick-check{display:inline-flex;align-items:center;gap:4px;font-size:.78rem;color:#1b6457;font-weight:700;white-space:nowrap}.quick-check input{accent-color:#00746c;width:16px;height:16px}#suggestions{margin-bottom:14px}#suggestions .formrow{margin-top:8px}.quantity{line-height:1.42}
+
+/* V3.3 — inventario compacto de ancho completo y guia introductoria */
+.catalog{display:flex!important;flex-direction:column;align-items:stretch;gap:9px;width:100%}
+.group{width:100%;min-width:0;border-radius:11px;box-shadow:0 1px 0 #b6cbce1f}
+.group>summary{padding:12px 15px;background:#e8f3f2;font-size:.95rem;min-height:50px}
+.group>summary:hover{background:#d9efeb}.group[open]>summary{border-bottom:1px solid #c8e1df}
+.group>summary:before{font-size:1.15rem;width:14px}.count{margin-left:auto;color:#44626c;white-space:nowrap}
+.inventory-scroll{overflow-x:auto;width:100%}.inventory-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:.87rem}
+.inventory-table th{background:#f5f8f9;text-align:left;font-size:.74rem;text-transform:uppercase;letter-spacing:.035em;color:#4f6974;font-weight:800;padding:10px 12px;border-bottom:1px solid #dce7ea}
+.inventory-table th:nth-child(1){width:35%}.inventory-table th:nth-child(2){width:23%}.inventory-table th:nth-child(3){width:13%}.inventory-table th:nth-child(4){width:20%}.inventory-table th:nth-child(5){width:9%;text-align:right}
+.inventory-table td{border-top:1px solid #e8eff0;padding:8px 12px;vertical-align:middle;line-height:1.35;background:#fff}
+.inventory-table tr.entry:hover td{background:#f7fafa}
+.inventory-table tr.entry td:first-child{font-weight:640}.inventory-table tr.entry.optional td:first-child{font-weight:540}
+.inventory-table tr.sectionrow td{background:#f0f6f7;color:#385967;text-transform:uppercase;letter-spacing:.06em;font-size:.69rem;font-weight:850;padding:6px 12px;border-top:1px solid #cadfe1}
+.inventory-table tr.sectionrow.optional-divider td{background:#faf9f5;color:#7c6650}
+.inventory-table tr.note-row td{background:#f8fbfc;color:#496875;padding:9px 13px 12px;font-size:.81rem}
+.inventory-table tr.note-row[hidden]{display:none}
+.info-text{line-height:1.53}.info-text strong{color:#244b55}.item-title{display:inline;overflow-wrap:anywhere}.info-toggle{border:0;background:transparent;color:#176b70;text-decoration:underline;text-underline-offset:3px;font-size:.75rem;font-weight:680;margin-left:7px;padding:3px 0;white-space:nowrap}
+.qty-brief{font-weight:660;color:#244b56;font-variant-numeric:tabular-nums}.qty-user{display:block;font-size:.73rem;color:#667d86;margin-top:2px}
+.priority-label{display:inline-flex;align-items:center;font-size:.71rem;border-radius:20px;padding:3px 8px;border:1px solid #c0dad4;color:#216457;background:#eaf5f0;white-space:nowrap;font-weight:680}
+.priority-label.optional{background:#f6f4ef;color:#776750;border-color:#e4ded2}
+.inventory-table .status{max-width:none;min-width:0;width:100%;font-size:.83rem;padding:7px 8px;line-height:1.2}
+.inventory-table .status.preparar{background:#eaf3ff}.inventory-table .status.comprar{background:#fff1db}
+.edit-entry{float:right;white-space:nowrap}.inventory-table .align-right{text-align:right}
+.guide-panel{background:#fff;border:1px solid #b9d7d2;border-radius:13px;margin:12px 0;padding:17px 18px;box-shadow:0 3px 15px #153b3b09}
+.guide-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.guide-eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.09em;color:#08726e;font-weight:850}
+.guide-panel h2{font-size:1.23rem;margin:3px 0 2px}
+.guide-short{font-size:.85rem;color:#607781;margin:0 0 12px}
+.guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-bottom:7px}
+.guide-card{background:#f3f8f8;border:1px solid #e0eaea;border-radius:9px;padding:11px 13px;min-width:0}
+.guide-card strong{color:#173f48;font-size:.88rem}.guide-card p{margin:5px 0 0;color:#526a74;font-size:.83rem;line-height:1.45}
+.guide-deep{margin-top:10px;border-top:1px solid #e3ecee;padding-top:10px}
+.guide-deep>summary{cursor:pointer;color:#075e66;font-size:.85rem;font-weight:750}
+.guide-deep .guide-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 25px;margin-top:11px}
+.guide-deep h3{font-size:.88rem;margin:0 0 5px;color:#244b55}
+.guide-deep ul{margin:0;padding-left:18px;color:#405e68;font-size:.83rem;line-height:1.62}
+.guide-source{font-size:.73rem;margin:13px 0 1px;color:#71858b}.guide-source a{color:#246b73}
+.inventory-help{margin-top:8px;color:#58747b;font-size:.78rem}
+@media(max-width:820px){.guide-grid{grid-template-columns:1fr}.guide-deep .guide-columns{grid-template-columns:1fr}.inventory-table{table-layout:auto;min-width:650px}.inventory-table th:nth-child(1){width:34%}.inventory-table th:nth-child(2){width:19%}.inventory-table th:nth-child(3){width:12%}.inventory-table th:nth-child(4){width:22%}.inventory-table th:nth-child(5){width:13%}}
+@media(max-width:500px){.guide-panel{padding:12px}.group>summary{padding:10px}.count{font-size:.69rem}.inventory-scroll{overflow-x:auto}.inventory-table{min-width:680px}}
+@media(max-width:690px){
+.inventory-scroll{overflow:visible}.inventory-table{display:block;min-width:0;width:100%}.inventory-table thead{display:none}.inventory-table tbody{display:block}
+.inventory-table tr.sectionrow{display:block}.inventory-table tr.sectionrow td{display:block;width:100%;padding:7px 10px}
+.inventory-table tr.entry{display:grid;grid-template-columns:minmax(0,1fr) minmax(118px,37%);column-gap:9px;row-gap:5px;align-items:center;padding:9px 10px;border-top:1px solid #e2ecee}
+.inventory-table tr.entry td{display:block!important;border:0;padding:0;background:none!important;min-width:0}
+.inventory-table tr.entry td:first-child{grid-column:1;grid-row:1;font-size:.86rem}
+.inventory-table tr.entry td:nth-child(2){grid-column:1;grid-row:2}.inventory-table tr.entry td:nth-child(3){display:none!important}
+.inventory-table tr.entry td:nth-child(4){grid-column:2;grid-row:1}.inventory-table tr.entry td:nth-child(5){grid-column:2;grid-row:2;text-align:right}
+.inventory-table .status{font-size:.76rem;padding:6px 5px}.inventory-table .edit-entry{float:right}
+.inventory-table tr.note-row{display:block}.inventory-table tr.note-row[hidden]{display:none}.inventory-table tr.note-row td{display:block;font-size:.79rem}
+.qty-brief{font-size:.79rem}.info-toggle{font-size:.72rem}
+}
+@media print{.guide-panel{display:none!important}}
+
+
+/* V3.3: lectura sencilla y controles accesibles en móvil */
+@media(max-width:690px){
+  :root{font-size:16px;line-height:1.46}
+  .hero p{font-size:.9rem}
+  .guide-panel{padding:12px}
+  .guide-grid{gap:7px}
+  .guide-card{padding:10px 11px}
+  .guide-card strong{font-size:.92rem}
+  .guide-card p,.guide-short{font-size:.89rem;line-height:1.45}
+  .guide-deep>summary{font-size:.92rem;min-height:40px;padding:7px 0}
+  .guide-deep ul{font-size:.89rem}
+  .guide-deep h3{font-size:.96rem}
+  .guide-source{font-size:.8rem}
+  .tab{font-size:.93rem;min-height:46px;line-height:1.25}
+  .btn{min-height:42px}
+  .btn.small{min-height:38px;padding:7px 9px;font-size:.83rem}
+  .group>summary{font-size:1rem;min-height:48px;line-height:1.3}
+  .count{font-size:.74rem}
+  .inventory-table tr.entry{padding:11px 10px;row-gap:7px}
+  .inventory-table tr.entry td:first-child{font-size:.91rem;line-height:1.4}
+  .qty-brief{font-size:.86rem}
+  .qty-user{font-size:.8rem}
+  .inventory-table .status{font-size:.85rem;min-height:39px}
+  .info-toggle{font-size:.85rem;min-height:30px;padding:4px 0}
+  .inventory-table tr.note-row td{font-size:.9rem;line-height:1.5}
+  .inventory-help,.hint,.tip,.metric{font-size:.86rem}
+  .field{font-size:16px;min-height:40px}
+  .fieldlabel{font-size:.9rem!important}
+  .quick-check{font-size:.84rem}
+  .bar>span{font-size:.84rem}
+}
+@media(max-width:390px){
+  .inventory-table tr.entry{grid-template-columns:minmax(0,1fr) minmax(112px,41%)}
+}
+
+/* V3.4: primera pantalla ordenada, acceso fácil e infografía íntegramente local */
+.setup-panel{border-left:4px solid #00746c;background:#fff;margin-top:10px}
+.setup-heading,.kit-heading{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+.setup-heading h2,.kit-heading h2{margin:0 0 3px;font-size:1.17rem;color:#153f4a}
+.setup-heading p,.kit-heading p{margin:0;color:#526e78;font-size:.88rem}
+.step-symbol{display:flex;align-items:center;justify-content:center;background:#00746c;color:#fff;border-radius:50%;width:29px;height:29px;flex:0 0 29px;font-weight:800}
+.setup-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.setup-field{display:flex;flex-direction:column;gap:6px;background:#f2f7f7;border:1px solid #dce8e9;border-radius:8px;padding:9px 11px;font-weight:720;color:#264c56;font-size:.85rem}
+.setup-field .field{width:100%;font-size:1.1rem;font-weight:700;min-height:44px}
+.setup-help{color:#526d76;margin:11px 0 8px;font-size:.83rem;line-height:1.55}
+.kit-panel{padding:15px;margin-bottom:12px}
+.kit-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.kit-tile{border:1px solid #d9e6e7;background:#f8fbfb;border-radius:9px;display:flex;align-items:center;gap:10px;padding:9px 10px;min-height:65px}
+.kit-icon-wrap{flex:0 0 42px;width:42px;height:42px;border-radius:10px;background:#e4f1ef;color:#126d63;display:flex;align-items:center;justify-content:center}
+.kit-icon{height:27px;width:27px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.kit-tile strong{font-size:.88rem;line-height:1.32;color:#214b54}
+.kit-foot{margin:11px 0 0;color:#587079;font-size:.81rem;line-height:1.5}
+.kit-foot a{color:#116e73;font-weight:650}
+.kit-icons{position:absolute;width:0;height:0;overflow:hidden}
+@media(max-width:900px){.setup-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.kit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:550px){.hero .chips{display:none}.hero p{font-size:.85rem}.hero .chips{margin-top:7px}.hero{padding:12px 0}.setup-heading h2,.kit-heading h2{font-size:1.05rem}.setup-grid{gap:7px}.setup-field{padding:8px 9px;font-size:.87rem}.kit-grid{gap:6px}.kit-tile{padding:9px 7px;min-height:70px;gap:7px}.kit-icon-wrap{width:35px;height:35px;flex-basis:35px}.kit-icon{height:23px;width:23px}.kit-tile strong{font-size:.81rem}.setup-help{font-size:.84rem}}
+@media(max-width:360px){.kit-tile{flex-direction:column;text-align:center;min-height:89px;justify-content:center}.kit-tile strong{font-size:.81rem}}
+@media print{.setup-panel,.kit-panel{display:none!important}}
+
+/* V3.5: indicaciones breves de cada apartado, sin botón de confirmación */
+.section-how{margin:10px 0 6px;padding:10px 12px;background:#f1f7f6;border-left:3px solid #00746c;border-radius:6px;color:#325862;font-size:.88rem;line-height:1.46}
+#summaryTop{margin:7px 0 1px;color:#325862;font-weight:610}
+@media(max-width:690px){.section-how{font-size:.91rem;padding:9px 10px;margin:9px 0 5px}}
+@media print{.section-how{display:none!important}}
+
+/* V3.6: barra de herramientas y navegacion compactas en pantallas pequenas. */
+.mobile-label{display:none}
+@media(max-width:690px){
+  .desktop-label{display:none}
+  .mobile-label{display:inline}
+  .bar{gap:5px;padding:7px 0 8px}
+  .bar>span{font-size:.78rem;line-height:1.35}
+  .bar>.actions{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    column-gap:7px;
+    row-gap:5px;
+    align-items:stretch;
+  }
+  .bar>.actions>button{
+    width:100%; min-width:0; min-height:44px;
+    flex:none; padding:7px 6px;
+    font-size:.87rem; line-height:1.2;
+    border-radius:7px; white-space:normal;
+  }
+  /* The destructive operation is clearly secondary and does not make a giant tile. */
+  .bar>.actions>#resetBackup{
+    order:10;grid-column:1/-1;justify-self:center;
+    width:auto;min-height:40px;margin:0;padding:7px 18px;
+    background:transparent;border-color:transparent;
+    color:#93443c;font-size:.81rem;text-decoration:underline;
+  }
+  .bar>.actions>#resetBackup:focus-visible{
+    outline:3px solid #21a99c;outline-offset:2px
+  }
+  /* A balanced 3+2 grid replaces the oversized irregular tab rows. */
+  .tabs{
+    display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:5px;align-items:stretch;margin:4px 0 10px;
+  }
+  .tabs>.tab{
+    grid-column:span 2;flex:none;min-width:0;min-height:44px;
+    padding:6px 3px;font-size:.84rem;line-height:1.14;
+    border-radius:8px 8px 0 0;
+  }
+  .tabs>.tab:nth-child(n+4){grid-column:span 3}
+  .tabs>.tab[aria-selected=true]{padding-top:4px}
+}
+
+/* V4: navegación compacta y seguimiento real del kit, sin recursos externos */
+:root{--military:#354a32;--coral:#d96c35;--cream:#f9f6ee}
+.home-intro{padding:6px 2px 9px}.home-intro h2{margin:0;color:#203e3b}.home-intro p{margin:4px 0;color:#647679;font-size:.85rem}
+.dashboard-kits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-bottom:12px}
+.dashboard-card{padding:12px 8px;background:#fff;border:1px solid var(--line);border-radius:12px;text-align:center;color:var(--ink);min-width:0;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer}
+.dashboard-card:hover{background:#f4f9f7}.dashboard-card b{font-size:.9rem}.dashboard-card small{color:var(--muted);font-size:.74rem}
+.progress-ring{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--coral) var(--p),#e6e8df 0);margin:4px auto 7px;flex:0 0 72px}
+.progress-ring:before{content:'';background:white;border-radius:50%;width:54px;height:54px;grid-area:1/1}
+.progress-ring strong{grid-area:1/1;z-index:1;font-size:1.14rem;font-variant-numeric:tabular-nums;color:#273d36}
+.dashboard-pending{display:flex;flex-direction:column;gap:0;margin-top:8px}
+.dashboard-pending button{appearance:none;text-align:left;background:#fff;border:0;border-top:1px solid #e7eae8;padding:12px 6px;color:#284249;display:flex;align-items:center;gap:11px;min-height:49px;width:100%;font-weight:680}
+.dashboard-pending button::before{content:'☐';font-size:1.4rem;color:#6b827b}.dashboard-pending button small{color:var(--muted);font-weight:450;margin-left:auto;max-width:35%;text-align:right;font-size:.75rem}
+.start-extra{background:#fff;border:1px solid var(--line);border-radius:10px;margin:9px 0;overflow:hidden}
+.start-extra>summary{cursor:pointer;font-weight:750;padding:13px 14px;color:#214f4b;min-height:44px}
+.start-extra .kit-panel,.start-extra .guide-panel{box-shadow:none;border:0;border-top:1px solid var(--line);border-radius:0;margin:0}
+.more-routes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:11px}
+.more-routes button{min-height:48px;border:1px solid var(--line);border-radius:9px;background:#f6faf9;font-size:.95rem;font-weight:750;color:#1c4b4e}
+#moreActions .bar{display:block;padding:10px;background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:12px}
+#moreActions .bar>.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:9px}
+#moreActions .bar>.actions>button{min-height:44px;font-size:.86rem;white-space:normal;padding:8px}
+#moreActions .bar>.actions>#resetBackup{grid-column:1/-1;width:auto;justify-self:center;background:transparent;border:0;color:#a54039;text-decoration:underline}
+.tracking-block{padding:12px;border-radius:9px;border:1px solid #d6e6e1;background:#f5faf7}
+.tracking-block>strong{color:#25574b;font-size:1rem}.tracking-block>p{color:var(--muted);font-size:.82rem;margin:5px 0 10px}
+.item-check{appearance:none;vertical-align:middle;width:20px;height:20px;border:2px solid #708078;border-radius:5px;margin-right:9px;cursor:pointer}
+.item-check:checked{appearance:auto;accent-color:#4b7050}.stock-track{height:4px;overflow:hidden;background:#e6e7df;border-radius:6px;margin-top:5px;width:100%}.stock-fill{height:100%;background:var(--coral);border-radius:6px}.stock-fill.full{background:#598663}
+.qty-user{font-size:.73rem}.expires-warning{color:#aa3c2e;font-size:.73rem;font-weight:780}
+.info-text .detail-line{display:block;padding:4px 0}.dashboard-card:focus-visible,.dashboard-pending button:focus-visible,.more-routes button:focus-visible{outline:3px solid #22a98d;outline-offset:2px}
+.nav-tab-more{color:#204a4a}
+@media (max-width:690px){
+ body{padding-bottom:78px}.tabs{position:fixed!important;bottom:0;left:0;right:0;z-index:80;display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;background:#f7faf8;border-top:1px solid #cadbd5;border-bottom:0;margin:0!important;padding:5px max(6px,env(safe-area-inset-right)) calc(5px + env(safe-area-inset-bottom)) max(6px,env(safe-area-inset-left));gap:3px;box-shadow:0 -3px 14px #12342918}
+ .tabs>.tab,.tabs>.tab:nth-child(n+4){grid-column:auto!important;min-height:52px!important;white-space:normal;border:0!important;border-radius:8px!important;padding:6px 2px!important;font-size:.77rem!important;line-height:1.16!important}
+ .tabs>.tab[aria-selected=true]{background:#dfeee8!important;color:#16594c!important;border-top:0!important}
+ .dashboard-kits{gap:6px}.dashboard-card{padding:8px 4px}.dashboard-card b{font-size:.82rem}.dashboard-card small{font-size:.7rem}
+ .progress-ring{height:64px;width:64px;flex-basis:64px}.progress-ring:before{height:47px;width:47px}.progress-ring strong{font-size:1.03rem}
+ .inventory-table .item-check{width:19px;height:19px;margin-right:7px}.tracking-block .editgrid{grid-template-columns:1fr 1fr}
+ .home-intro p{font-size:.82rem}
+}
+
+@media(max-width:690px){
+ #catalog .inventory-table tr.entry{grid-template-columns:minmax(0,1fr) 75px;column-gap:9px;row-gap:4px;padding:9px 10px}
+ #catalog .inventory-table tr.entry td:first-child{grid-column:1;grid-row:1;font-size:.94rem}
+ #catalog .inventory-table tr.entry td:nth-child(2){grid-column:1/-1;grid-row:2;min-height:0}
+ #catalog .inventory-table tr.entry td:nth-child(4){display:none!important}
+ #catalog .inventory-table tr.entry td:nth-child(5){grid-column:2;grid-row:1;justify-self:end}
+ #catalog .inventory-table tr.entry td.no-quantity{display:none!important}
+ #catalog .inventory-table tr.entry .edit-entry{min-height:36px;float:none;padding:6px 10px;border-radius:10px;background:#f5faf7;border:1px solid #dae7e3;color:#27685b;font-size:.79rem}
+ #catalog .inventory-table tr.entry td .qty-brief{font-size:.82rem;color:#667772;font-weight:500}
+ #catalog .inventory-table tr.entry td .qty-user{font-size:.82rem}
+ #catalog .inventory-table tr.entry td .stock-track{margin-top:5px}
+}
+
+@media print{.tabs,.dashboard-kits,.dashboard-pending,.home-intro,.start-extra,#moreScreen,#startScreen{display:none!important}}
+/* V5: compact, accessible package quantities and two-state materials */
+.stock-catalog{margin:12px 0}.stock-title{font-size:1rem;color:#143f45;margin:10px 0 5px}.stock-group{background:#fff;border:1px solid #cddfdf;border-radius:11px;margin:8px 0;overflow:hidden}
+.stock-group>summary{min-height:50px;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 13px;cursor:pointer;font-weight:730;background:#f3f9f7}
+.stock-label{flex:1;min-width:0}.stock-label small{display:inline-block;color:#857452;font-weight:500;font-size:.72rem}.stock-brief{flex:0 0 auto;white-space:nowrap;font-size:.86rem;font-variant-numeric:tabular-nums}.stock-brief.is-ready{color:#157054}
+.stock-body{padding:8px 10px}.stock-progress{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:2px 2px 10px}.stock-progress small{font-size:.77rem;color:#587279}
+.stock-bar{flex:1 1 100%;height:6px;background:#e8e9e2;border-radius:8px;overflow:hidden}.stock-bar i{display:block;height:100%;background:#26816b;border-radius:8px}
+.stock-group>summary{flex-wrap:wrap}.check-row.flash{background:#fff3c4;transition:background .4s;border-radius:8px}.stock-brief{display:flex;flex-direction:column;align-items:flex-end;line-height:1.2}.stock-brief b{font-weight:730}.stock-basic{font-size:.68rem;color:#587279;font-weight:500;white-space:normal;text-align:right}.stock-brief.is-ready .stock-basic{color:#157054}.lots-editor{display:block;margin:4px 0}.lot-row{display:grid;grid-template-columns:74px 1fr 1fr auto;gap:6px;align-items:center;margin-bottom:6px}.lot-row .field{min-width:0}.lot-del{padding:6px 10px}.lot-line{display:block;color:#587279;font-size:.74rem;margin-top:1px}.stock-mini{flex:1 1 100%;order:3;height:6px;background:#dfe6e2;border-radius:8px;overflow:hidden}.stock-mini i{display:block;height:100%;background:#26816b;border-radius:8px}.expiry-pick{display:grid;grid-template-columns:1fr 1fr auto;gap:6px;align-items:center}.expiry-pick small{grid-column:1/-1;color:#587279;font-size:.77rem;font-weight:400}
+.package-row{display:flex;align-items:center;gap:8px;border-top:1px solid #edf1f0;padding:8px 2px;min-width:0}.package-desc{flex:1;min-width:0;font-size:.9rem}.package-desc strong{font-weight:680;display:block;overflow-wrap:anywhere}.package-desc small{display:block;color:#5e757d;font-size:.73rem}
+.package-controls{display:flex;gap:6px;align-items:center;flex:0 0 auto}.qty-button{width:36px;height:40px;border:1px solid #bed6d2;border-radius:8px;background:#f3faf6;color:#0f6359;font-size:1.5rem;line-height:1;display:grid;place-items:center;font-weight:650}
+.qty-button:disabled{opacity:.34}.package-count{font-variant-numeric:tabular-nums;min-width:25px;text-align:center;font-weight:800;font-size:1.03rem}.package-edit{background:none;border:0;color:#216b70;font-size:.78rem;text-decoration:underline;min-height:40px;padding:6px 2px}
+.stock-footer{padding:10px 2px 3px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.stock-help{font-size:.79rem;color:#58717b;flex:1 1 210px}.stock-help>summary{cursor:pointer}.stock-help p{line-height:1.45;padding:2px 0;margin:5px 0}
+.expiry-flag{color:#a03b29!important;font-weight:750}.legacy-stock-warning{padding:8px 9px;background:#fff8ea;border-radius:7px;font-size:.8rem;color:#6d522e;line-height:1.4;margin:2px 0 10px}.simple-ready{display:flex!important;flex-direction:row!important;align-items:center;font-size:.98rem!important;gap:9px;padding:10px 12px;border:1px solid #b9d9c9;border-radius:8px;background:#f4faf6;color:#225945!important}.simple-ready input{width:20px!important;height:20px!important;accent-color:#198366}
+.check-rows{padding:0 10px}.check-row{display:flex;align-items:center;gap:8px;border-top:1px solid #e9efef;padding:10px 0}.ready-choice{display:flex;align-items:center;gap:9px;min-width:0;flex:1;cursor:pointer;font-size:.87rem}.ready-choice input{width:20px;height:20px;flex:0 0 20px;accent-color:#167965}.ready-choice span{overflow-wrap:anywhere}.ready-state{font-size:.77rem;color:#93602e;white-space:nowrap}.ready-state.done{color:#16725a}.check-help{font-size:.77rem;color:#4c6972;padding:0 0 8px 29px}.check-help summary{cursor:pointer}.check-help p{margin:5px 0;line-height:1.5}
+@media(max-width:690px){.stock-body{padding:7px 9px}.stock-group>summary{padding:10px;gap:5px}.stock-label{font-size:.93rem}.stock-brief{font-size:.79rem}.package-row{gap:5px}.package-desc{font-size:.84rem}.package-desc small{font-size:.73rem}.qty-button{width:33px;height:42px}.package-count{min-width:19px}.package-controls{gap:3px}.package-edit{font-size:.76rem;padding:4px}.check-row{flex-wrap:wrap}.ready-choice{flex-basis:58%}.check-row .btn.small{min-height:36px}.ready-state{font-size:.73rem}}
+@media(max-width:360px){.package-desc{font-size:.78rem}.qty-button{width:30px}.package-controls{gap:1px}}
+
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap"><div class="kicker">Plan familiar · V5.0 · Uso local</div><h1>Kit Emergencia: Plan Familiar</h1><p>Preparación ante emergencias, local y sin Internet.</p><div class="chips"><span id="chipEdition">Inventario personal</span><span id="chipPeople">Configura tu hogar</span><span id="chipDays">Días por confirmar</span><span>Sin servicios externos</span></div></div></header>
+<main class="wrap">
+
+ <section id="homeSetup" class="setup-panel panel" aria-labelledby="setupHeading">
+   <div class="setup-heading"><span class="step-symbol">1</span><div><h2 id="setupHeading">Configura tu hogar</h2><p>Indica quiénes sois y cuántos días queréis cubrir. Las cantidades se actualizan automáticamente.</p></div></div>
+   <div class="setup-grid">
+     <label class="setup-field" for="adultCount"><span>Adultos</span><input class="field" id="adultCount" type="number" min="1" max="20" inputmode="numeric" value="1"></label>
+     <label class="setup-field" for="childCount"><span>Niños</span><input class="field" id="childCount" type="number" min="0" max="20" inputmode="numeric" value="0"></label>
+     <label class="setup-field" for="daysCount"><span>Días de reserva en casa</span><input class="field" id="daysCount" type="number" min="1" max="60" inputmode="numeric" value="7"></label>
+     <label class="setup-field" for="evacCount"><span>Días que cubre la mochila</span><input class="field" id="evacCount" type="number" min="1" max="7" inputmode="numeric" value="3"></label>
+   </div>
+   <p class="setup-help"><strong>Mochila:</strong> días de suministros transportables (3 = 72 horas), no duración de la evacuación.</p>
+   
+   <p class="hint" id="summaryTop" aria-live="polite">Calculando las reservas orientativas para tu hogar…</p>
+ </section>
+ <svg class="kit-icons" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="0" height="0">
+  <symbol id="ki-water" viewBox="0 0 24 24"><path d="M12 2C9.1 6.5 5.5 10.5 5.5 14.3a6.5 6.5 0 0 0 13 0C18.5 10.5 14.9 6.5 12 2Z"></path><path d="M8.7 15.5a3.4 3.4 0 0 0 2.7 2.7"></path></symbol>
+  <symbol id="ki-food" viewBox="0 0 24 24"><rect x="5" y="6" width="14" height="15" rx="2"></rect><path d="M5 10h14M9 3h6M9 14h6M12 10v11"></path></symbol>
+  <symbol id="ki-radio" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="13" rx="2"></rect><path d="M7 8 17 3M7 13h5M7 16h5"></path><circle cx="17" cy="15" r="2"></circle></symbol>
+  <symbol id="ki-light" viewBox="0 0 24 24"><path d="M6 3h12v5l-4 4v9h-4v-9L6 8Z"></path><path d="M6 8h12M8 3V1m4 2V1m4 2V1"></path></symbol>
+  <symbol id="ki-first" viewBox="0 0 24 24"><rect x="2.5" y="6.5" width="19" height="15" rx="3"></rect><path d="M9 6V4a3 3 0 0 1 6 0v2M12 10v8M8 14h8"></path></symbol>
+  <symbol id="ki-meds" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="5" transform="rotate(-35 12 12)"></rect><path d="m9 9 6 6"></path></symbol>
+  <symbol id="ki-power" viewBox="0 0 24 24"><rect x="2" y="6" width="18" height="12" rx="2"></rect><path d="M22 10v4M9 9l-2 4h4l-2 4"></path></symbol>
+  <symbol id="ki-doc" viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6Z"></path><path d="M14 2v5h5M9 12h7M9 16h7"></path></symbol>
+</svg>
+ <section class="kit-panel panel" aria-labelledby="kitHeading">
+   <div class="kit-heading"><span class="step-symbol">2</span><div><h2 id="kitHeading">Kit básico · 72 horas</h2><p>Lo esencial que recomienda preparar Protección Civil.</p></div></div>
+   <div class="kit-grid" role="list" aria-label="Elementos básicos del kit de emergencia">
+     <div class="kit-tile" role="listitem"><span class="kit-icon-wrap"><svg class="kit-icon" role="img" aria-label=""><use href="#ki-water"></use></svg></span><strong>Agua embotellada</strong></div>
+     <div class="kit-tile" role="listitem"><span class="kit-icon-wrap"><svg class="kit-icon" role="img" aria-label=""><use href="#ki-food"></use></svg></span><strong>Alimentos sin cocinar</strong></div>
+     <div class="kit-tile" role="listitem"><span class="kit-icon-wrap"><svg class="kit-icon" role="img" aria-label=""><use href="#ki-radio"></use></svg></span><strong>Radio y pilas</strong></div>
+     <div class="kit-tile" role="listitem"><span class="kit-icon-wrap"><svg class="kit-icon" role="img" aria-label=""><use href="#ki-light"></use></svg></span><strong>Linterna</strong></div>
+     <div class="kit-tile" role="listitem"><span class="kit-icon-wrap"><svg class="kit-icon" role="img" aria-label=""><use href="#ki-first"></use></svg></span><strong>Botiquín</strong></div>
+     <div class="kit-tile" role="listitem"><span class="kit-icon-wrap"><svg class="kit-icon" role="img" aria-label=""><use href="#ki-meds"></use></svg></span><strong>Medicación habitual</strong></div>
+     <div class="kit-tile" role="listitem"><span class="kit-icon-wrap"><svg class="kit-icon" role="img" aria-label=""><use href="#ki-power"></use></svg></span><strong>Cargador portátil</strong></div>
+     <div class="kit-tile" role="listitem"><span class="kit-icon-wrap"><svg class="kit-icon" role="img" aria-label=""><use href="#ki-doc"></use></svg></span><strong>Documentos y contactos</strong></div>
+   </div>
+   <p class="kit-foot">Añade higiene, ropa de abrigo y las necesidades específicas de niños o mascotas. <strong>El detalle del inventario utiliza los datos del paso 1 y se actualiza al cambiarlos.</strong> <a href="https://ficheros.proteccioncivil.es/unidadesFormativas/Plan_Familiar_Emergencias_Creacion_propia_UnidadPsicologiaDGPCYE.pdf" target="_blank" rel="noopener">Ver guía de Protección Civil</a>.</p>
+ </section>
+ <section class="guide-panel" aria-label="Guía de preparación">
+   <div class="guide-top"><div><div class="guide-eyebrow">Paso 3 · Organiza y revisa</div><h2>Cómo dejarlo todo preparado</h2></div><span class="badge">Guía rápida · uso local</span></div>
+   <p class="guide-short">Revisa lo que tienes, prepara lo que falta y consulta las instrucciones cuando las necesites.</p>
+   <div class="guide-grid">
+     <div class="guide-card"><strong>Reserva en casa</strong><p id="guideHouseText">Calculamos las reservas según los días y las personas indicadas. Incluye comida sin cocinar, botiquín e higiene.</p></div>
+     <div class="guide-card"><strong>Mochilas listas</strong><p id="guideBagsText">Una mochila por adulto con agua, comida transportable, documentos, abrigo y linterna. Adapta el peso.</p></div>
+     <div class="guide-card"><strong>Plan en papel</strong><p>Acordad puntos de encuentro, contactos y qué hacer si estáis separados. Imprimid instrucciones breves. Revisad el material cada seis meses.</p></div>
+   </div>
+   <details class="guide-deep"><summary>Ver consejos prácticos de organización y evacuación</summary>
+     <div class="guide-columns">
+       <div><h3>Organizar las reservas de casa</h3><ul><li>Separar una reserva de emergencia o identificar claramente las existencias que contarán como tal.</li><li>Elegir alimentos duraderos que la familia ya coma y que se puedan consumir sin electricidad ni cocinar.</li><li>Revisar la caducidad y rotar las existencias con el consumo habitual.</li><li>Guardar agua y comida en recipientes cerrados, en lugar fresco y seco; en zonas inundables, evitar plantas bajas.</li><li>Prever un abrelatas manual, higiene sin agua corriente, botiquín y formas de recibir avisos.</li></ul></div>
+       <div><h3>Preparar las mochilas</h3><ul><li>Repartir los elementos indispensables entre los adultos. Una mochila por adulto, ligera y fácil de coger.</li><li>Para el menor: ropa, agua y algo de comida, contacto familiar escrito y objeto de confort; lo esencial lo cargan los adultos.</li><li>Guardar documentos y aparatos sensibles en bolsas impermeables.</li><li>Dejar dentro cables compatibles, pilas y una batería externa cargada; evitar sacar objetos para uso diario.</li><li>La mochila de evacuación es para salir; no tiene que contener todas las reservas domésticas.</li></ul></div>
+       <div><h3>Actuar con seguridad</h3><ul><li>Atender avisos de Protección Civil y emergencias; no evacuar por iniciativa propia hacia una zona peligrosa.</li><li>No cruzar agua en movimiento ni intentar usar rutas inundadas.</li><li>No usar hornillos ni barbacoas de gas dentro de casa, garajes o tiendas de campaña: riesgo de monóxido de carbono.</li><li>Conocer cortes de agua, gas y electricidad; manipularlos solo cuando corresponda y sea seguro.</li></ul></div>
+       <div><h3>Revisión y coordinación familiar</h3><ul><li>Comprobar el kit aproximadamente cada seis meses: alimentos, medicamentos, pilas, baterías y tallas infantiles.</li><li>Acordar dos puntos de encuentro y un contacto común fuera de la zona afectada.</li><li>Imprimir los planes de acción y los mapas con rutas y servicios; conservar una copia sin depender del móvil.</li><li>Si hay animales o personas dependientes, adaptar comida, medicación, transporte y responsables.</li></ul></div>
+       <div><h3>Vehículo y combustible</h3><ul><li>Si dispones de coche, procura llevar el depósito lleno o, al menos, mantenerlo por encima de la mitad. En vehículos eléctricos, conserva una reserva razonable de carga.</li><li>Ten en cuenta que una gasolinera puede estar cerrada o no funcionar durante un apagón.</li></ul></div>
+       <div><h3>Móvil y mapas sin Internet (opcional)</h3><ul><li>Descarga y prueba previamente mapas sin conexión (Organic Maps o Google Maps) y guarda también un atlas o plano en papel.</li><li>Kiwix y los modelos de Google AI Edge Gallery requieren descargar contenido y pueden ocupar mucho espacio. Comprueba antes la memoria disponible.</li><li>Reduce brillo y activa ahorro de batería; apaga Bluetooth y otras conexiones si no las necesitas. El modo avión ahorra consumo, pero impide recibir llamadas, mensajes y alertas de red mientras esté activo.</li><li>Bitchat necesita Bluetooth y otros dispositivos cercanos: no debe ser la comunicación principal en una emergencia.</li></ul></div>
+     </div>
+   </details>
+   <p class="guide-source">Basado en guías de <a href="https://ficheros.proteccioncivil.es/unidadesFormativas/Plan_Familiar_Emergencias_Creacion_propia_UnidadPsicologiaDGPCYE.pdf" target="_blank" rel="noopener">Protección Civil</a>, <a href="https://www2.cruzroja.es/preparacionantedesastres" target="_blank" rel="noopener">Cruz Roja</a> y <a href="https://www.ready.gov/kit" target="_blank" rel="noopener">Ready.gov</a>. Las 72 horas son una base; el número de días y las cantidades se ajustan aquí. Los enlaces son opcionales: la web funciona sin Internet.</p>
+ </section>
+ <div class="bar"><span>Los cambios se guardan en este dispositivo. Haz copias JSON periódicas.</span><div class="actions"><button class="btn" id="saveBackup">↓ Copia JSON</button><button class="btn" id="importBackup">↑ Importar</button><button class="btn" id="printSection">Imprimir / PDF</button></div></div>
+ <input type="file" id="jsonFile" accept=".json,application/json" hidden="">
+ <nav class="tabs" aria-label="Apartados"><button class="tab" data-tab="casa" aria-selected="true">⌂ Casa</button><button class="tab" data-tab="salida">↗ Evacuación</button><button class="tab" data-tab="planes">☷ Planes</button><button class="tab" data-tab="mascotas">♧ Mascotas</button><button class="tab" data-tab="mapas" aria-label="Mapas y recursos">▤ <span class="desktop-label">Mapas y recursos</span><span class="mobile-label" aria-hidden="true">Mapas</span></button></nav>
+ <section id="startScreen" class="start-screen hidden" aria-label="Inicio"><div class="home-intro"><h2>Tu preparación</h2><p>Revisa lo que ya tienes y prepara lo que falta. Los porcentajes indican elementos básicos completados, no autonomía garantizada.</p></div><div id="dashboardCards" class="dashboard-kits"></div><section class="panel" aria-labelledby="pendingHeading"><div class="headerline"><h2 id="pendingHeading">Lo siguiente por revisar</h2><span id="pendingCount" class="badge"></span></div><div id="dashboardPending" class="dashboard-pending"></div></section><details id="basicKitDetails" class="start-extra" open=""><summary>Ver kit básico recomendado y consejos</summary><div id="basicKitSlot"></div></details><details id="helpDetails" class="start-extra"><summary>Ver cómo organizar casa, mochilas y planes</summary><div id="guideSlot"></div></details></section>
+<section id="moreScreen" class="hidden" aria-label="Más opciones"><div class="panel"><h2>Más opciones</h2><p class="section-how">Accede a tus mascotas, mapas y documentos. Aquí también puedes guardar una copia de seguridad, importar datos.</p><div id="moreRoutes" class="more-routes"></div></div><div id="moreActions"></div><div class="panel hidden" id="feedbackPanel"><h3>Sugerencias y errores</h3><p class="tip">¿Echas algo en falta o has encontrado un fallo? Escríbenos por correo. No se envía ningún dato de tu inventario: solo se abre tu aplicación de correo con un mensaje por rellenar.</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" class="btn small" id="feedbackIdea">Proponer una mejora</button><button type="button" class="btn small" id="feedbackBug">Comunicar un error</button></div></div><div class="panel hidden" id="reminderPanel"><h3>Avisos de caducidad</h3><label class="ready-choice"><input type="checkbox" id="reminderOn"><span>Avisarme 30 días antes de que caduque algo</span></label><p class="tip" id="reminderStatus"></p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px"><button type="button" class="btn small" id="reminderTest">Probar aviso</button><button type="button" class="btn small" id="reminderSettings">Ajustes de notificaciones</button></div></div><div class="panel"><h3>Herramientas digitales (opcionales)</h3><p class="tip">Organic Maps y Kiwix pueden usarse sin Internet tras descargar mapas y contenidos; estos ocupan espacio. Para ahorrar batería: reduce el brillo, utiliza el modo ahorro y apaga conexiones que no necesites. Conserva siempre instrucciones y mapas en papel.</p></div></section>
+<section id="inventoryScreen"><div class="panel"><div class="headerline"><div><h2 id="inventoryTitle">Permanecer en casa</h2><p id="inventorySub" class="hint"></p></div><div class="formrow" id="exitModeWrap" hidden=""><span class="tip">Transporte:</span><select class="field" id="exitMode"><option value="pie">A pie</option><option value="coche">En coche</option></select></div></div><p class="section-how" id="inventoryHow"></p><div class="formrow" id="inventoryFilters" style="margin-top:10px"><input id="search" class="field search" type="search" placeholder="Buscar material…" aria-label="Buscar material"><select class="field" id="statusFilter" aria-label="Filtrar por preparación"><option value="todos">Todos</option><option value="pendiente">Pendientes</option><option value="listo">Listos</option></select><select class="field" id="priorityFilter"><option value="todos">Mínimos y extras</option><option value="basico">Solo mínimos</option><option value="opcional">Solo mejoras</option></select><button class="btn main" id="newItem">+ Material</button></div><div id="stats" class="stats"></div><div id="stockCatalog" class="stock-catalog"></div><p class="inventory-help">Abre una categoría, añade existencias con + y − o marca Listo. Las cantidades se calculan con los datos de tu hogar.</p><p class="hint" id="petMini"></p></div><div id="catalog" class="catalog"></div><section id="suggestions" class="box" style="margin-top:12px"><h3>Opciones para personalizar (no son mínimos)</h3><p class="tip">La fotovoltaica, los sistemas avanzados de respaldo y otros equipos particulares no se exigen para preparar un kit básico. Añádelos solo si se ajustan a tu vivienda.</p><div id="extraSuggestions" class="formrow"></div></section></section>
+ <section id="plansScreen" class="hidden"><div class="panel"><div class="headerline"><div><h2>Planes de acción imprimibles</h2><p class="hint">Crea instrucciones cortas para actuar en una emergencia.</p><p class="section-how">Elige un tipo de plan, escribe los pasos por orden y pulsa «+ Paso». Después podrás imprimir solo ese plan para dejarlo a mano.</p></div><span class="badge">Independientes del inventario</span></div></div><div class="planopts" id="planSwitch"><button class="pill active" data-plan="casa">En casa</button><button class="pill" data-plan="salida">Evacuar</button><button class="pill" data-plan="separados">Separados</button><button class="pill" data-plan="comun">Familia extensa</button></div><div class="split"><div class="box"><h3 id="planName">Permanecer en casa</h3><label class="fieldlabel">Introducción breve<textarea class="field" id="planIntro" maxlength="350" placeholder="Descripción en una frase..."></textarea></label><div id="steps" style="margin-top:10px"></div><div class="newstep"><input class="field" id="stepText" maxlength="220" placeholder="Añadir instrucción corta..."><button id="addStep" class="btn main">+ Paso</button></div><div class="formrow"><button id="printPlan" class="btn main">Imprimir solo este plan / PDF</button><button id="downloadPlanTxt" class="btn">Checklist TXT</button></div></div><div class="box"><h3>Datos del plan común</h3><p class="tip">Se pueden dejar pendientes y completarlos entre familiares. No se comparten automáticamente.</p><div class="editgrid" id="familyFields"><label class="fieldlabel">Punto de encuentro principal<input class="field" data-family="meeting" maxlength="180"></label><label class="fieldlabel">Punto alternativo<input class="field" data-family="alternative" maxlength="180"></label><label class="fieldlabel">Contacto de referencia<input class="field" data-family="contact" maxlength="180"></label><label class="fieldlabel">Comunicación alternativa<input class="field" data-family="comms" maxlength="180"></label><label class="fieldlabel wide">Observaciones / cuándo NO desplazarse<textarea class="field" data-family="notes" maxlength="700"></textarea></label></div><div class="notice">Prioridad: seguir indicaciones oficiales. No intentar llegar a un punto de encuentro atravesando inundaciones u otras zonas peligrosas.</div></div></div></section>
+ <section id="petsScreen" class="hidden"><div class="panel"><div class="headerline"><div><h2>Mascotas</h2><p class="hint">Opcional, si convives con animales.</p><p class="section-how">Pulsa «Añadir mascota», indica si es perro o gato, su peso y, si la conoces, su ración diaria. Verás una estimación de agua y comida para los días configurados.</p></div><button id="newPet" class="btn main">+ Añadir mascota</button></div><div class="stats" id="petsTotals"></div></div><div id="petCards" class="subpanels"></div><div class="box"><h3>Material para animales</h3><p class="tip">Casa: comida, agua, medicación, higiene. Evacuación: agua/comida transportables, correa o transportín, cartilla o identificación. No dejarlos atrás cuando sea seguro evacuarlos.</p><p class="tip">Estimaciones de agua y pienso **orientativas**, no una pauta veterinaria. La ración real depende del alimento y las necesidades del animal; introduce la que figure en su envase.</p></div></section>
+ <section id="mapScreen" class="hidden"><div class="panel"><h2>Mapas impresos y puntos útiles</h2><p class="hint">Ten un plano y una lista de lugares útiles, también en papel.</p><p class="section-how">Añade una imagen de mapa (si la tienes) y anota puntos de encuentro, farmacias y otros recursos. Imprime el mapa con la lista. No se descargan mapas ni se sitúan marcadores automáticamente.</p></div><div class="split"><div class="box"><h3>Plano de la zona</h3><div class="formrow"><input type="file" id="mapFile" accept="image/png,image/jpeg,image/webp" class="field"><button id="removeMap" class="btn">Quitar plano</button></div><img id="mapPreview" class="mapimg" alt="Plano local elegido" hidden=""><p id="mapHelp" class="tip">Admite JPG/PNG/WebP. La imagen se reduce para guardarla localmente y se incluye en copias JSON.</p><label class="fieldlabel">Título / área del mapa<input id="mapTitle" class="field" maxlength="150" placeholder="Ej.: municipio y alrededores"></label></div><div class="box"><h3>Recursos y puntos de encuentro</h3><div class="editgrid"><label class="fieldlabel">Tipo<select id="poiType" class="field"><option>Gasolinera</option><option>Butano</option><option>Farmacia</option><option>Centro médico</option><option>Agua potable</option><option>Supermercado</option><option>Punto de encuentro</option><option>Refugio</option><option>Zona de riesgo</option><option>Otro</option></select></label><label class="fieldlabel">Nombre<input id="poiName" class="field" maxlength="100" placeholder="Lugar o referencia"></label><label class="fieldlabel wide">Dirección o indicaciones<input id="poiAddress" class="field" maxlength="220" placeholder="Dirección o cómo encontrarlo"></label></div><div class="formrow" style="margin-top:8px"><button id="addPoi" class="btn main">+ Añadir punto</button><button id="printMap" class="btn">Imprimir mapa y lista / PDF</button></div><div id="poiList"></div><p class="tip">Comprueba ubicaciones y servicios antes de una emergencia: podrían estar cerrados o ser inaccesibles.</p></div></div></section>
+ <footer class="footer">Aplicación de archivo único y sin conexiones externas. Datos almacenados en este navegador; exporta JSON para conservarlos o trasladarlos. Cantidades de comida orientativas, editables según edades y dietas. Ante peligro inmediato, llama al 112 y sigue a Protección Civil. Los hornillos de gas se usan solo en exteriores, nunca en interiores ni garajes.</footer>
+</main>
+<dialog class="dialog" id="itemDialog"><form id="itemForm"><div class="dialoghead"><h2 id="itemFormTitle">Editar material</h2></div><div class="dialogbody"><div class="editgrid">
+<label class="fieldlabel wide">Material<input id="editName" class="field" maxlength="140" required=""></label>
+<label class="fieldlabel wide simple-ready"><input type="checkbox" id="editDone"> <strong>Listo: ya está preparado</strong></label>
+<label class="fieldlabel">Ubicación<select id="editScope" class="field"><option value="casa">Casa</option><option value="salida">Mochila</option><option value="ambos">Casa y mochila</option><option value="coche">Coche</option></select></label>
+<label class="fieldlabel">Categoría<select id="editCategory" class="field"></select></label>
+<label class="fieldlabel">Prioridad<select id="editPriority" class="field"><option value="basico">Básico recomendado</option><option value="opcional">Opcional</option></select></label>
+<label class="fieldlabel">Fecha de caducidad (si procede)<input id="editExpiry" type="hidden"><span class="expiry-pick" data-for="editExpiry"></span></label>
+<label class="fieldlabel wide">Dónde lo guardas<input class="field" id="editPlace" maxlength="180" placeholder="Ej. armario del pasillo"></label>
+<label class="fieldlabel wide">Notas<textarea class="field" id="editNote" maxlength="1200" placeholder="Indicaciones o contenido del material"></textarea></label>
+</div><p id="legacyNote" class="tip" hidden=""></p></div><div class="dialogfoot"><button type="button" id="deleteItem" class="btn warn">Eliminar</button><div class="actions"><button type="button" class="btn" id="cancelItem">Cancelar</button><button type="submit" class="btn main">Guardar</button></div></div></form></dialog>
+<dialog class="dialog" id="petDialog"><form id="petForm"><div class="dialoghead"><h2 id="petFormTitle">Mascota</h2></div><div class="dialogbody"><div class="editgrid"><label class="fieldlabel">Animal<select id="petType" class="field"><option value="perro">Perro</option><option value="gato">Gato</option></select></label><label class="fieldlabel">Cantidad<input id="petCount" class="field" type="number" min="1" max="20" value="1" required=""></label><label class="fieldlabel">Peso de cada uno (kg)<input id="petWeight" class="field" type="number" min="0.5" max="120" step="0.1" value="5" required=""></label><label class="fieldlabel">Pienso habitual (g/animal/día)<input id="petFood" class="field" type="number" min="0" max="3000" step="5" placeholder="Si se conoce"></label><label class="fieldlabel wide">Notas opcionales<textarea id="petNote" class="field" maxlength="500" placeholder="Medicación, alergias, dónde está el transportín..."></textarea></label></div><p class="tip">Si no introduces gramos al día, usaremos una aproximación para pienso seco de 3.500 kcal/kg. Ajusta con el envase o el veterinario.</p><div class="dialogfoot"><button id="deletePet" type="button" class="btn warn">Eliminar</button><div class="actions"><button id="cancelPet" type="button" class="btn">Cancelar</button><button type="submit" class="btn main">Guardar</button></div></div></div></form></dialog>
+<div id="paper"></div><div id="toast" class="toast" role="status"></div>
+<script type="application/json" id="personal-seed">{"template":true}</script>
+<dialog class="dialog" id="stockDialog"><form id="stockForm"><div class="dialoghead"><h2 id="stockTitle">Editar producto</h2></div><div class="dialogbody"><div class="editgrid">
+<label class="fieldlabel wide">Producto<input id="stockName" class="field" maxlength="100" required=""></label>
+<label class="fieldlabel">Contenido por unidad <span id="stockYieldUnit"></span><input id="stockYield" class="field" type="number" min="0.01" max="1000" step="0.01" inputmode="decimal" required=""></label>
+<div class="fieldlabel wide">Unidades y caducidad (un lote por cada fecha distinta)<div id="stockLots" class="lots-editor"></div><button type="button" id="stockAddLot" class="btn small">+ Añadir lote</button></div>
+<label class="fieldlabel">Lugar de almacenamiento<input id="stockPlace" class="field" maxlength="180"></label>
+<label class="fieldlabel wide">Notas (opcional)<textarea id="stockNote" class="field" maxlength="350"></textarea></label>
+</div><p class="tip">Para alimentos indica las raciones reales por envase. Una lata pequeña no equivale necesariamente a una comida completa.</p></div><div class="dialogfoot"><button type="button" id="stockDelete" class="btn warn">Quitar producto</button><div class="actions"><button type="button" id="stockCancel" class="btn">Cancelar</button><button class="btn main" type="submit">Guardar</button></div></div></form></dialog>
+<script>
+'use strict';
+/* V3.1 — página sin bibliotecas, sin solicitudes de red, sin cuentas. */
+const LEGACY_CAT = [{"id":"base-0","name":"Instalación solar y almacenamiento (opcional)","scope":"casa","category":"Energía y comunicaciones","priority":"opcional","note":"Opcional. Las placas y baterías solo ayudan durante un corte si la instalación puede operar aislada de la red. Autonomía según generación y consumo.","status":"revisar"},{"id":"base-1","name":"Domótica para ahorro eléctrico (opcional)","scope":"casa","category":"Energía y comunicaciones","priority":"opcional","note":"Opcional. Automatizar cortes de consumo no esencial y conservar controles manuales.","status":"revisar"},{"id":"base-2","name":"Modo ahorro eléctrico y controles manuales","scope":"casa","category":"Energía y comunicaciones","priority":"opcional","note":"Preparar un modo ahorro; probar servidor, router y dispositivos sin Internet y con alimentación de respaldo.","status":"revisar"},{"id":"base-4","name":"Radio de pilas o manivela","scope":"ambos","category":"Energía y comunicaciones","priority":"basico","note":"Radio de pilas o manivela. Probar sintonización y fuente de alimentación.","status":"revisar"},{"id":"base-5","name":"Baterías externas para teléfonos","scope":"ambos","category":"Energía y comunicaciones","priority":"basico","note":"Batería externa cargada con capacidad suficiente para los teléfonos.","status":"revisar"},{"id":"base-6","name":"Juego de cables con cada powerbank","scope":"ambos","category":"Energía y comunicaciones","priority":"basico","note":"Reservar cables adecuados y comprobar que cargan los dispositivos de cada familia.","status":"revisar"},{"id":"base-7","name":"Walkie-talkie (opcional)","scope":"ambos","category":"Energía y comunicaciones","priority":"opcional","note":"Opcional. Verificar modelo, autonomía y frecuencias legales.","status":"revisar"},{"id":"base-8","name":"Segundo walkie-talkie (opcional)","scope":"salida","category":"Energía y comunicaciones","priority":"opcional","note":"Opcional, si se emplean comunicaciones por radio. Verificar compatibilidad y uso legal.","status":"revisar"},{"id":"base-9","name":"Linterna de emergencia","scope":"ambos","category":"Iluminación y herramientas","priority":"basico","note":"Linterna LED de mano, con pilas o batería cargada.","status":"revisar"},{"id":"base-10","name":"Linternas frontales","scope":"ambos","category":"Iluminación y herramientas","priority":"basico","note":"Permiten tener las manos libres. Tener pilas de repuesto.","status":"revisar"},{"id":"base-11","name":"Linterna pequeña infantil (si procede)","scope":"ambos","category":"Iluminación y herramientas","priority":"opcional","note":"Una linterna pequeña puede ser útil para un niño, sin sustituir la iluminación de los adultos.","status":"revisar"},{"id":"base-12","name":"Pilas dedicadas a emergencias","scope":"ambos","category":"Iluminación y herramientas","priority":"basico","note":"Reservar pilas compatibles con linternas y radio; controlar caducidades.","status":"revisar"},{"id":"base-13","name":"Barras químicas luminosas","scope":"ambos","category":"Iluminación y herramientas","priority":"opcional","note":"Opcional. Barras de luz química de un solo uso; comprobar caducidad.","status":"revisar"},{"id":"base-14","name":"Multiherramienta con alicates","scope":"ambos","category":"Iluminación y herramientas","priority":"opcional","note":"Herramienta básica. Transportarla con seguridad y conforme a normas aplicables.","status":"revisar"},{"id":"base-15","name":"Prismáticos pequeños","scope":"salida","category":"Iluminación y herramientas","priority":"opcional","note":"Opcional por peso y volumen.","status":"revisar"},{"id":"base-16","name":"Agua para casa","scope":"casa","category":"Agua y alimentación","priority":"basico","note":"Referencia de planificación doméstica: aproximadamente 4 litros por persona y día para bebida y un uso muy básico de higiene, basada en 1 galón/día de Ready.gov/FEMA. El agua para otros usos, el calor y necesidades médicas puede requerir más. No se aconseja transportar esa cantidad en mochilas.","status":"revisar","dynamic":"home_water"},{"id":"base-17","name":"Despensa personal adicional (opcional)","scope":"casa","category":"Agua y alimentación","priority":"opcional","note":"Reserva personal complementaria. Los alimentos de referencia se desglosan en la lista de mínimos.","status":"revisar","dynamic":null},{"id":"base-18","name":"Abrelatas manual y utensilios","scope":"casa","category":"Agua y alimentación","priority":"basico","note":"Abrir conservas y preparar comidas sin herramientas eléctricas.","status":"revisar"},{"id":"base-19","name":"Cocina exterior de gas y combustible (opcional)","scope":"casa","category":"Agua y alimentación","priority":"opcional","note":"Opcional. Uso exterior ventilado. Guardar bombonas con arreglo a normas del fabricante.","status":"revisar"},{"id":"base-20","name":"Hornillo plegable (opcional)","scope":"casa","category":"Agua y alimentación","priority":"opcional","note":"Opcional. Identificar el cartucho compatible; uso exclusivamente en exteriores.","status":"revisar"},{"id":"base-21","name":"Hornillo de maletín (opcional)","scope":"ambos","category":"Agua y alimentación","priority":"opcional","note":"Opcional. Hornillo tipo maletín estable para exterior, útil en casa o evacuando en coche; no para caminar con mochila.","status":"revisar"},{"id":"base-22","name":"Cartuchos para hornillo tipo maletín","scope":"ambos","category":"Agua y alimentación","priority":"opcional","note":"Si se utiliza hornillo, elegir cartuchos compatibles; conservarlos en lugar seguro.","status":"revisar"},{"id":"base-23","name":"Botiquín familiar y caducidades","scope":"casa","category":"Salud, higiene y abrigo","priority":"basico","note":"Revisar material de primeros auxilios, estado, tamaño y caducidad.","status":"revisar"},{"id":"base-24","name":"Medicación habitual y caducidades","scope":"ambos","category":"Salud, higiene y abrigo","priority":"basico","note":"Comprobar medicación y receta de cada persona, necesidades y conservación.","status":"revisar"},{"id":"base-25","name":"Reserva adicional de higiene (opcional)","scope":"casa","category":"Salud, higiene y abrigo","priority":"opcional","note":"Reserva personal complementaria. La lista de partida ya desglosa papel, jabón, bolsas y toallitas.","status":"revisar","dynamic":"home_hygiene"},{"id":"base-26","name":"Mantas y ropa de abrigo en casa","scope":"casa","category":"Salud, higiene y abrigo","priority":"basico","note":"Ropa, mantas y calzado para cada persona y estación del año.","status":"revisar"},{"id":"base-27","name":"Extintor y detectores adecuados","scope":"casa","category":"Documentación y seguridad","priority":"opcional","note":"Elementos de seguridad adecuados a la vivienda y sus equipos.","status":"revisar"},{"id":"base-28","name":"Copias de documentos importantes","scope":"ambos","category":"Documentación y seguridad","priority":"basico","note":"Identificación, tarjeta sanitaria, seguros y datos esenciales protegidos del agua, en papel y, si conviene, copia digital segura.","status":"revisar"},{"id":"base-29","name":"Guardar reservas elevadas","scope":"casa","category":"Documentación y seguridad","priority":"basico","note":"Ubicar provisiones en zonas elevadas y protegidas ante inundaciones.","status":"revisar"},{"id":"base-30","name":"Mochilas de los adultos","scope":"salida","category":"Mochilas y transporte","priority":"basico","note":"Una mochila transportable por persona capaz de llevarla; no imponer un volumen universal.","status":"revisar","dynamic":"adult_bags"},{"id":"base-31","name":"Mochila del niño (si procede)","scope":"salida","category":"Mochilas y transporte","priority":"basico","note":"Mochila pequeña del niño, si puede llevarla. Lo esencial viaja con los adultos.","status":"revisar"},{"id":"base-32","name":"Agua portátil para mochilas","scope":"salida","category":"Agua y alimentación","priority":"basico","note":"Lleva agua que se pueda transportar de forma segura; no se pretende cargar toda la reserva doméstica. Planifica fuentes seguras de reposición y atiende las instrucciones oficiales.","status":"revisar","dynamic":"exit_water"},{"id":"base-33","name":"Comida compacta para evacuar","scope":"salida","category":"Agua y alimentación","priority":"basico","note":"Alimentos ligeros y que no necesiten cocinarse, para el tiempo de evacuación previsto. Adapta cantidad al peso de la mochila, trayecto y necesidades alimentarias.","status":"revisar","dynamic":"exit_food"},{"id":"base-34","name":"Botiquín portátil","scope":"salida","category":"Salud, higiene y abrigo","priority":"basico","note":"Botiquín pequeño y accesible para las primeras horas.","status":"revisar"},{"id":"base-36","name":"Mantas térmicas","scope":"salida","category":"Salud, higiene y abrigo","priority":"basico","note":"Mantas térmicas compactas, preferiblemente una por persona.","status":"revisar","dynamic":"thermal_blankets"},{"id":"base-37","name":"Mudas, ropa de abrigo e impermeables","scope":"salida","category":"Salud, higiene y abrigo","priority":"basico","note":"Una muda, calcetines, chubasquero, abrigo y calzado por persona.","status":"revisar"},{"id":"base-38","name":"Artículos compactos de higiene","scope":"salida","category":"Salud, higiene y abrigo","priority":"basico","note":"Jabón pequeño, pañuelos, toallitas, bolsas y artículos personales.","status":"revisar"},{"id":"base-40","name":"Tarjeta de contacto de menores","scope":"salida","category":"Documentación y seguridad","priority":"basico","note":"Si hay menores, identificaciones y teléfonos de contacto, con información apropiada a su edad.","status":"revisar"},{"id":"base-41","name":"Silbatos","scope":"salida","category":"Documentación y seguridad","priority":"basico","note":"Silbato de señalización por persona o repartido entre adultos.","status":"revisar"},{"id":"base-42","name":"Puntos de reunión y rutas seguras","scope":"salida","category":"Documentación y seguridad","priority":"basico","note":"Plan de encuentro alternativo según la emergencia; no cruzar vías inundadas.","status":"revisar"},{"id":"base-43","name":"Objeto de confort para niños (si procede)","scope":"salida","category":"Mochilas y transporte","priority":"opcional","note":"Objeto pequeño que tranquilice a un menor.","status":"revisar"},{"id":"extra-ups","name":"SAI / UPS de equipos críticos (opcional)","scope":"casa","category":"Energía y comunicaciones","priority":"opcional","note":"Opcional. UPS/SAI para red local y equipos esenciales; verificar autonomía y cargas.","status":"revisar"},{"id":"extra-cash","name":"Efectivo en billetes pequeños","scope":"ambos","category":"Documentación y seguridad","priority":"basico","note":"Pequeña cantidad de efectivo en billetes y monedas para cortes de terminales de pago.","status":"revisar"},{"id":"extra-maps","name":"Mapas y planos cartográficos en papel","scope":"ambos","category":"Documentación y seguridad","priority":"basico","note":"Mapas impresos del entorno y rutas alternativas, sin depender de cobertura.","status":"revisar"},{"id":"extra-plan","name":"Plan de acción familiar impreso","scope":"ambos","category":"Documentación y seguridad","priority":"basico","note":"Plan corto impreso con responsabilidades, teléfonos, punto de encuentro y prioridades.","status":"revisar"},{"id":"gen-emergency-contacts","name":"Teléfonos 112 y contactos familiares","scope":"ambos","category":"Documentación y seguridad","priority":"basico","note":"Registrar contactos por escrito, incluso si falla la telefonía.","status":"revisar"},{"id":"gen-home-valves","name":"Localizar cortes de agua, gas y electricidad","scope":"casa","category":"Documentación y seguridad","priority":"basico","note":"Identificar llaves de paso y seguridad; cortarlas solo si procede y es seguro.","status":"revisar"},{"id":"gen-medicine-prescriptions","name":"Lista de tratamientos y alergias","scope":"ambos","category":"Salud, higiene y abrigo","priority":"basico","note":"Lista de tratamientos, alergias y datos de urgencias para quienes lo necesiten.","status":"revisar"},{"id":"gen-car-fuel","name":"Depósito o carga del vehículo (opcional)","scope":"coche","category":"Mochilas y transporte","priority":"opcional","note":"Consejo preventivo, no requisito mínimo: procurar mantener el depósito lleno o, en su defecto, no bajar de la mitad. Para coches eléctricos, conservar margen de carga. Revisar neumáticos y rutas; las gasolineras pueden estar fuera de servicio. Nunca atravesar zonas inundadas.","status":"revisar"},{"id":"gen-car-supplies","name":"Equipo complementario del coche","scope":"coche","category":"Mochilas y transporte","priority":"opcional","note":"Agua, mantas, linterna, cargador de 12 V y otros elementos según estación.","status":"revisar"},{"id":"gen-car-docs","name":"Documentación del vehículo","scope":"coche","category":"Documentación y seguridad","priority":"opcional","note":"Documentación, seguro, contactos de asistencia y llaves.","status":"revisar"},{"id":"gen-care","name":"Necesidades de personas dependientes","scope":"ambos","category":"Salud, higiene y abrigo","priority":"basico","note":"Adaptar equipos, medicación, movilidad y cuidados a las necesidades reales de la familia.","status":"revisar"},{"id":"gen-local-plan","name":"Plan familiar impreso y simulacro","scope":"ambos","category":"Documentación y seguridad","priority":"basico","note":"Plan fácil de consultar con responsabilidades y punto alternativo; revisar periódicamente.","status":"revisar"},{"id":"gen-communication","name":"Alternativas si no hay red móvil","scope":"ambos","category":"Energía y comunicaciones","priority":"basico","note":"Punto de encuentro y mensajes por radio si los equipos y frecuencias lo permiten.","status":"revisar"}];
+const MORE_ESSENTIALS = [{"id":"min-food-breakfast","name":"Desayunos sin refrigeración ni cocina","scope":"casa","category":"Agua y alimentación","priority":"basico","note":"Ejemplos: pan tostado, galletas, cereales, leche UHT o alternativa que consumáis. Planifica un desayuno por persona y día; ajusta intolerancias y edades.","status":"revisar","dynamic":"food_breakfast"},{"id":"min-food-legumes","name":"Legumbres cocidas en conserva","scope":"casa","category":"Agua y alimentación","priority":"basico","note":"Garbanzos, lentejas o alubias ya cocidos, listos para consumir. Una opción para parte de las comidas principales; no se suman a otras raciones como si fueran comidas extra.","status":"revisar","dynamic":"food_legumes"},{"id":"min-food-protein","name":"Conservas proteicas o alternativas","scope":"casa","category":"Agua y alimentación","priority":"basico","note":"Ejemplos: atún, sardinas, pollo en conserva o alternativas vegetales que no precisen frigorífico. Una parte de las comidas principales.","status":"revisar","dynamic":"food_protein"},{"id":"min-food-ready","name":"Platos preparados de larga conservación","scope":"casa","category":"Agua y alimentación","priority":"basico","note":"Ejemplos: platos en conserva, cremas ya listas, ensaladas en bote y otras raciones seguras a temperatura ambiente; elegir opciones que se puedan comer frías.","status":"revisar","dynamic":"food_ready"},{"id":"min-food-fruit","name":"Fruta y verdura de larga conservación","scope":"casa","category":"Agua y alimentación","priority":"basico","note":"Ejemplos: fruta en conserva, compotas, verduras en bote y otras opciones estables sin frío. Complementan las comidas, no reemplazan todas las raciones principales.","status":"revisar","dynamic":"food_fruit"},{"id":"min-food-snacks","name":"Tentempiés energéticos","scope":"casa","category":"Agua y alimentación","priority":"basico","note":"Ejemplos: frutos secos, barritas, galletas o fruta deshidratada. Comprobar alergias, dentición y necesidades individuales.","status":"revisar","dynamic":"food_snacks"},{"id":"min-food-special","name":"Dietas o alimentación especial (si procede)","scope":"ambos","category":"Salud, higiene y abrigo","priority":"opcional","note":"Prever alimentos para intolerancias, alergias, dietas médicas y necesidades de menores. Si nadie los necesita, marcar No aplica.","status":"revisar"},{"id":"min-hygiene-paper","name":"Papel higiénico y productos de higiene","scope":"casa","category":"Salud, higiene y abrigo","priority":"basico","note":"Papel higiénico, jabón, higiene menstrual y productos personales para los días elegidos. Adaptar cantidades al hogar.","status":"revisar"},{"id":"min-hygiene-wipes","name":"Toallitas y desinfectante de manos","scope":"ambos","category":"Salud, higiene y abrigo","priority":"basico","note":"Productos para higiene básica sin agua corriente; no sustituyen la higiene de manos cuando pueda realizarse.","status":"revisar"},{"id":"min-hygiene-bags","name":"Bolsas resistentes para residuos","scope":"casa","category":"Salud, higiene y abrigo","priority":"basico","note":"Bolsas de basura y medios para cerrarlas, pensando en cortes de agua y gestión segura de residuos.","status":"revisar"},{"id":"min-tools-whistle","name":"Silbato y herramientas básicas","scope":"casa","category":"Iluminación y herramientas","priority":"basico","note":"Silbato, tijeras o multiherramienta sencilla, cinta resistente y material útil para pequeños arreglos; no requiere equipamiento profesional.","status":"revisar"},{"id":"min-infant-food","name":"Alimentación infantil, biberones y pañales (si procede)","scope":"ambos","category":"Salud, higiene y abrigo","priority":"opcional","note":"Solo cuando existan bebés o personas que lo necesiten. Las cantidades dependen de su consumo habitual.","status":"revisar"}];
+const CAT = [...LEGACY_CAT,...MORE_ESSENTIALS];
+const FIRST_AID_ITEMS = [{"id":"fa-gloves","name":"Guantes desechables (sin látex, si procede)","scope":"ambos","category":"Botiquín y primeros auxilios","priority":"basico","note":"Barrera al atender a otra persona. Guardar pares de repuesto.","status":"revisar"},{"id":"fa-gauze","name":"Gasas estériles y compresas","scope":"ambos","category":"Botiquín y primeros auxilios","priority":"basico","note":"Para cubrir y proteger heridas; comprobar que los envoltorios estén intactos.","status":"revisar"},{"id":"fa-plasters","name":"Tiritas y apósitos de varios tamaños","scope":"ambos","category":"Botiquín y primeros auxilios","priority":"basico","note":"Para heridas pequeñas; elegir tamaños adecuados y revisar caducidad.","status":"revisar"},{"id":"fa-tape","name":"Esparadrapo o cinta médica","scope":"ambos","category":"Botiquín y primeros auxilios","priority":"basico","note":"Para fijar apósitos; preferir opción hipoalergénica si procede.","status":"revisar"},{"id":"fa-saline","name":"Suero fisiológico estéril","scope":"ambos","category":"Botiquín y primeros auxilios","priority":"basico","note":"Para limpieza inicial de heridas; las monodosis cerradas son prácticas.","status":"revisar"},{"id":"fa-antiseptic","name":"Antiséptico cutáneo adecuado","scope":"ambos","category":"Botiquín y primeros auxilios","priority":"basico","note":"Clorhexidina apta para uso cutáneo o povidona yodada según indicaciones y alergias. No usar alcohol sobre heridas abiertas.","status":"revisar"},{"id":"fa-bandages","name":"Vendas y pañuelo triangular","scope":"ambos","category":"Botiquín y primeros auxilios","priority":"basico","note":"Para sujeción de apósitos y apoyo básico; utilizar solo técnicas de primeros auxilios que se conozcan.","status":"revisar"},{"id":"fa-scissors","name":"Tijeras de punta roma","scope":"ambos","category":"Botiquín y primeros auxilios","priority":"basico","note":"Para cortar vendas, ropa o esparadrapo sin puntas afiladas.","status":"revisar"},{"id":"fa-tweezers","name":"Pinzas de punta no dentada","scope":"casa","category":"Botiquín y primeros auxilios","priority":"basico","note":"Herramienta para curas sencillas; limpiar según indicación.","status":"revisar"},{"id":"fa-thermometer","name":"Termómetro","scope":"casa","category":"Botiquín y primeros auxilios","priority":"basico","note":"Comprobar su funcionamiento y pilas si las utiliza.","status":"revisar"},{"id":"fa-guide","name":"Guía breve de primeros auxilios","scope":"ambos","category":"Botiquín y primeros auxilios","priority":"opcional","note":"Guía descargada o impresa; no sustituye formación ni atención urgente.","status":"revisar"}];
+CAT.push(...FIRST_AID_ITEMS);
+const STARTER_IDS = new Set(["base-4","base-5","base-6","base-9","base-12","base-16","base-18","base-23","base-24","base-26","base-28","base-30","base-31","base-32","base-33","base-34","base-36","base-37","base-38","base-40","base-41","base-42","extra-cash","extra-maps","extra-plan","gen-emergency-contacts","gen-home-valves","gen-medicine-prescriptions","min-food-breakfast","min-food-legumes","min-food-protein","min-food-ready","min-food-fruit","min-food-snacks","min-hygiene-paper","min-hygiene-wipes","min-hygiene-bags","min-tools-whistle","min-infant-food","min-food-special","gen-car-fuel"]);
+FIRST_AID_ITEMS.forEach(it=>STARTER_IDS.add(it.id));
+const STARTER_CAT = CAT.filter(it=>STARTER_IDS.has(it.id));
+const SUGGESTION_IDS = ["base-0","base-1","extra-ups","base-7","base-19","base-21","gen-car-supplies"];
+const SEED = JSON.parse(document.getElementById('personal-seed').textContent || '{}');
+const CATS = ['Agua y alimentación','Botiquín y primeros auxilios','Salud, higiene y abrigo','Energía y comunicaciones','Iluminación y herramientas','Documentación y seguridad','Mochilas y transporte'];
+// Solo texto visible: el nombre interno de la categoria se conserva para no romper datos guardados ni copias JSON.
+const CAT_LABELS={'Agua y alimentación':'Cocina y utensilios'};function catLabel(c){return CAT_LABELS[c]||c}
+// Selector de caducidad por mes y anio (la fecha se guarda como el ultimo dia del mes, formato AAAA-MM-DD como antes).
+const MESES_ES=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+function syncExpiryPicker(id){const i=document.getElementById(id);if(i&&i.syncPicker)i.syncPicker();}
+function buildExpiryPicker(id){
+  const host=document.querySelector('.expiry-pick[data-for="'+id+'"]'),input=document.getElementById(id);if(!host||!input)return;
+  const mes=document.createElement('select'),anio=document.createElement('select');mes.className='field';anio.className='field';
+  mes.setAttribute('aria-label','Mes de caducidad');anio.setAttribute('aria-label','Año de caducidad');
+  mes.append(new Option('Mes',''));for(let i=1;i<=12;i++)mes.append(new Option(String(i).padStart(2,'0'),String(i).padStart(2,'0')));
+  anio.append(new Option('Año',''));const y0=new Date().getFullYear();for(let y=y0-1;y<=y0+25;y++)anio.append(new Option(String(y),String(y)));
+  const clear=document.createElement('button');clear.type='button';clear.className='btn small';clear.textContent='Quitar';
+  const hint=document.createElement('small');hint.textContent='Elige mes y año. Se considera válido hasta el último día de ese mes.';
+  function commit(){if(mes.value&&anio.value){const last=new Date(Number(anio.value),Number(mes.value),0).getDate();input.value=anio.value+'-'+mes.value+'-'+String(last).padStart(2,'0');}else input.value='';}
+  mes.addEventListener('change',commit);anio.addEventListener('change',commit);
+  clear.addEventListener('click',()=>{mes.value='';anio.value='';input.value='';});
+  input.syncPicker=function(){const m=/^(\d{4})-(\d{2})/.exec(input.value||'');if(!m){mes.value='';anio.value='';return;}if(![...anio.options].some(o=>o.value===m[1]))anio.append(new Option(m[1],m[1]));mes.value=m[2];anio.value=m[1];};
+  host.append(mes,anio,clear,hint);
+}
+buildExpiryPicker('editExpiry');
+// ===== V6: lotes (unidades + caducidad) dentro de cada producto =====
+function todayISO(){const n=new Date();return n.getFullYear()+'-'+String(n.getMonth()+1).padStart(2,'0')+'-'+String(n.getDate()).padStart(2,'0');}
+function lotExpired(l){return Boolean(l&&l.expiry&&l.expiry<todayISO());}
+function expiryShort(iso){return iso?iso.slice(5,7)+'/'+iso.slice(0,4):'sin fecha';}
+function lotCmp(a,b){if(a.expiry===b.expiry)return 0;if(!a.expiry)return 1;if(!b.expiry)return -1;return a.expiry<b.expiry?-1:1;}
+function lotsNormalize(arr,keepZero){const out=[];(Array.isArray(arr)?arr:[]).slice(0,80).forEach(l=>{if(!l||typeof l!=='object')return;const count=Math.floor(num(l.count,0,0,100000));const expiry=/^\d{4}-\d{2}-\d{2}$/.test(l.expiry||'')?l.expiry:'';if(count>0||(keepZero&&expiry))out.push({id:limited(l.id,60)||newId(),count,expiry});});out.sort(lotCmp);return out;}
+function rowLots(row){if(Array.isArray(row.lots))return row.lots;return(row.count>0||row.expiry)?[{id:'l0',count:Math.floor(num(row.count,0,0,100000)),expiry:row.expiry||''}]:[];}
+function rowSync(row,keepZero){row.lots=lotsNormalize(row.lots,keepZero);row.count=row.lots.reduce((s,l)=>s+l.count,0);const d=row.lots.filter(l=>l.expiry);row.expiry=d.length?d[0].expiry:'';return row;}
+function legacyRow(r){r.lots=[{id:newId(),count:r.count,expiry:r.expiry}];return rowSync(r,true);}
+function lotsLine(row){const lots=rowLots(row).filter(l=>l.count>0);if(!lots.length)return '';const shown=lots.slice(0,4).map(l=>`<span class="${lotExpired(l)?'expiry-flag':''}">${l.count} × ${expiryShort(l.expiry)}${lotExpired(l)?' (caducado)':''}</span>`);if(lots.length>4)shown.push('+'+(lots.length-4)+' más');return `<small class="lot-line">${shown.join(' · ')}</small>`;}
+function lotsPrint(row){const lots=rowLots(row).filter(l=>l.count>0&&(l.expiry||rowLots(row).length>1));return lots.length?' · lotes: '+lots.map(l=>`${l.count} × ${expiryShort(l.expiry)}${lotExpired(l)?' (caducado)':''}`).join(', '):'';}
+function expirySelects(value,onChange){
+  const mes=document.createElement('select'),anio=document.createElement('select');mes.className='field';anio.className='field';
+  mes.setAttribute('aria-label','Mes de caducidad');anio.setAttribute('aria-label','Año de caducidad');
+  mes.append(new Option('Mes',''));for(let i=1;i<=12;i++)mes.append(new Option(String(i).padStart(2,'0'),String(i).padStart(2,'0')));
+  anio.append(new Option('Año',''));const y0=new Date().getFullYear();for(let y=y0-1;y<=y0+25;y++)anio.append(new Option(String(y),String(y)));
+  const m=/^(\d{4})-(\d{2})/.exec(value||'');if(m){if(![...anio.options].some(o=>o.value===m[1]))anio.append(new Option(m[1],m[1]));mes.value=m[2];anio.value=m[1];}
+  function commit(){let v='';if(mes.value&&anio.value){const last=new Date(Number(anio.value),Number(mes.value),0).getDate();v=anio.value+'-'+mes.value+'-'+String(last).padStart(2,'0');}onChange(v);}
+  mes.addEventListener('change',commit);anio.addEventListener('change',commit);return {mes,anio};
+}
+// Opciones para personalizar: al anadirlas se dan por tenidas, se abre su categoria y se desplaza la vista hasta ellas.
+function scrollToItemRow(id){const el=document.querySelector('.check-row[data-item-id="'+String(id).replace(/"/g,'')+'"]');if(!el)return;el.scrollIntoView({block:'center',behavior:'smooth'});el.classList.add('flash');setTimeout(()=>el.classList.remove('flash'),1800);}
+function addSuggestedItem(it){const added={...clone(it),status:'tengo',qty:''};state.items.push(added);expandedGroups.add(added.category);
+  if(added.scope==='coche'){exitMode='coche';const sel=document.getElementById('exitMode');if(sel)sel.value='coche';}
+  toast('Añadido y marcado como «lo tengo»: está en «'+catLabel(added.category)+'»');setTimeout(()=>scrollToItemRow(added.id),80);}
+let stockLotsDraft=[];
+function renderStockLots(){const host=document.getElementById('stockLots');if(!host)return;host.replaceChildren();
+  if(!stockLotsDraft.length){const p=document.createElement('small');p.className='tip';p.textContent='Sin unidades. Pulsa «+ Añadir lote».';host.append(p);return;}
+  stockLotsDraft.forEach((l,idx)=>{const row=document.createElement('div');row.className='lot-row';
+    const cnt=document.createElement('input');cnt.type='number';cnt.min='0';cnt.max='100000';cnt.step='1';cnt.inputMode='numeric';cnt.className='field lot-count';cnt.value=String(l.count);cnt.setAttribute('aria-label','Unidades del lote');
+    cnt.addEventListener('input',()=>{l.count=Math.floor(num(cnt.value,0,0,100000));});
+    const sel=expirySelects(l.expiry,v=>{l.expiry=v;});
+    const del=document.createElement('button');del.type='button';del.className='btn small lot-del';del.textContent='✕';del.setAttribute('aria-label','Quitar este lote');
+    del.addEventListener('click',()=>{stockLotsDraft.splice(idx,1);renderStockLots();});
+    row.append(cnt,sel.mes,sel.anio,del);host.append(row);});
+}
+document.getElementById('stockAddLot').addEventListener('click',()=>{if(stockLotsDraft.length>=80)return;stockLotsDraft.push({id:newId(),count:1,expiry:''});renderStockLots();});
+
+
+const LABELS = {revisar:'Por comprobar',tengo:'Lo tengo',preparar:'Preparar',comprar:'Comprar',valorar:'Valorar',noaplica:'No aplica'};
+const STATUS_ORDER = ['revisar','tengo','preparar','comprar','valorar','noaplica'];
+const PLAN_NAMES = {casa:'Permanecer en casa',salida:'Evacuar',separados:'Si estamos separados',comun:'Plan común entre familias'};
+const KEY = 'plan-emergencias-v3:' + document.documentElement.dataset.installation;
+const $ = id => document.getElementById(id);
+const clone = v => JSON.parse(JSON.stringify(v));
+const limited = (v,n=400) => String(v??'').slice(0,n);
+const num = (v,fallback=0,min=0,max=1000) => {let n=Number(v);return Number.isFinite(n)?Math.min(max,Math.max(min,n)):fallback};
+const statusOf = s => ({comprobar:'revisar',...Object.fromEntries(STATUS_ORDER.map(x=>[x,x]))})[s]||'revisar';
+const esc = v => String(v??'').replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const fmt = x => Number(x).toLocaleString('es-ES',{maximumFractionDigits:1});
+const newId = () => 'personal-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,8);
+function cleanPlans(raw){const p={};for(const k of Object.keys(PLAN_NAMES)){const source=raw?.[k]||{};p[k]={intro:limited(source.intro,350),steps:(Array.isArray(source.steps)?source.steps:[]).slice(0,80).map(x=>({id:limited(x.id||newId(),80),text:limited(x.text||x,220)})).filter(x=>x.text.trim())};}return p;}
+// V5: packaged food and bottled water. Product examples, NOT mandatory shopping brands.
+const STOCK_DEFS = [
+ {id:'home-water',scope:'casa',name:'Agua potable',unit:'L',kind:'water',dynamic:'home_water',priority:'basico',help:'Se cuentan litros totales de botellas cerradas. La reserva doméstica es una referencia de planificación; puede hacer falta agua adicional para higiene y personas con necesidades especiales.',products:[['Botella 0,5 L',0.5],['Botella 1 L',1],['Botella 1,5 L',1.5],['Botella 2 L',2],['Garrafa 5 L',5],['Garrafa 8 L',8]]},
+ {id:'home-breakfast',scope:'casa',name:'Desayunos sin cocina',unit:'raciones',kind:'food',dynamic:'food_breakfast',priority:'basico',help:'Ejemplos de alimentos de larga conservación. Ajusta las raciones por envase según el tamaño y la familia; no uses leche abierta sin refrigeración.',products:[['Leche UHT individual',1],['Pan tostado envasado',1],['Galletas',1],['Cereales secos',1],['Muesli',1],['Compota individual',1]]},
+ {id:'home-legumes',scope:'casa',name:'Legumbres cocidas en conserva',unit:'raciones',kind:'food',dynamic:'food_legumes',priority:'basico',help:'Lentejas, garbanzos y alubias cocidas pueden consumirse directamente si lo indica su etiqueta. Una ración es del alimento, no necesariamente una comida completa.',products:[['Lentejas cocidas',1],['Garbanzos cocidos',1],['Alubias cocidas',1],['Ensalada de legumbres estable',1]]},
+ {id:'home-protein',scope:'casa',name:'Conservas proteicas',unit:'raciones',kind:'food',dynamic:'food_protein',priority:'basico',help:'Ejemplos de proteína lista para comer. Revisa la etiqueta y las alergias; una lata pequeña puede aportar menos de una ración.',products:[['Atún en lata',1],['Sardinas en lata',1],['Caballa en lata',1],['Mejillones en conserva',1],['Salmón en conserva',1],['Pollo en conserva listo para comer',1]]},
+ {id:'home-ready',scope:'casa',name:'Platos listos para consumir',unit:'raciones',kind:'food',dynamic:'food_ready',priority:'basico',help:'Escoge platos que indiquen que son aptos para consumir sin calentar ni refrigeración antes de abrir. No todos los platos preparados cumplen estos requisitos.',products:[['Ensalada de legumbres envasada',1],['Ensalada de pasta estable',1],['Plato de verduras y legumbres en conserva',1],['Comida preparada en conserva apta en frío',1]]},
+ {id:'home-fruit',scope:'casa',name:'Frutas y verduras listas',unit:'porciones',kind:'food',dynamic:'food_fruit',priority:'basico',help:'Acompañan las comidas; no sustituyen alimentos suficientes en calorías y proteínas. Utiliza productos listos sin cocción.',products:[['Piña en conserva',1],['Melocotón en conserva',1],['Pera en conserva',1],['Macedonia en conserva',1],['Maíz dulce',1],['Guisantes cocidos',1],['Judías verdes cocidas',1],['Zanahoria cocida en conserva',1]]},
+ {id:'home-snacks',scope:'casa',name:'Tentempiés y energía',unit:'raciones',kind:'food',dynamic:'food_snacks',priority:'basico',help:'Alimentos concentrados en energía que complementan las comidas. Vigila alérgenos; la miel no es apta para menores de 12 meses.',products:[['Frutos secos',1],['Barrita de cereales',1],['Barrita energética',1],['Chocolate',1],['Fruta deshidratada',1],['Galletas saladas',1],['Crema de cacahuete',1],['Miel',1]]},
+ {id:'home-extra',scope:'casa',name:'Bebidas y complementos (opcionales)',unit:'unidades',kind:'food',dynamic:null,priority:'opcional',help:'Bebidas isotónicas y zumos pueden complementar, pero no sustituyen el agua potable ni las comidas. No se recomiendan bebidas energéticas con cafeína como parte del kit.',products:[['Bebida isotónica',1],['Zumo envasado estable',1],['Caldo listo para tomar',1],['Café soluble',1]]},
+ {id:'exit-water',scope:'salida',name:'Agua en las mochilas',unit:'L',kind:'water',dynamic:'exit_water',priority:'basico',help:'Referencia de agua inicial transportable (1 L por persona); no supone que cubra todos los días de evacuación. Planifica reposición segura y nunca atravieses zonas peligrosas para buscar agua.',products:[['Botella pequeña 0,33 L',0.33],['Botella pequeña 0,5 L',0.5],['Botella 1 L',1],['Botella 1,5 L',1.5]]},
+ {id:'exit-food',scope:'salida',name:'Comida para llevar',unit:'raciones',kind:'food',dynamic:'exit_food',priority:'basico',help:'Alimentos ligeros de consumo directo. Los cálculos son orientativos y la mochila debe poder transportarse; las raciones deben ajustarse a edad, salud y peso.',products:[['Barrita de cereales',1],['Frutos secos en monodosis',1],['Galletas en paquetes pequeños',1],['Atún abre fácil',1],['Compota individual',1],['Fruta deshidratada individual',1]]},
+];
+const TRACKED_BY_DYNAMIC = Object.fromEntries(STOCK_DEFS.filter(x=>x.dynamic).map(x=>[x.dynamic,x.id]));
+const TRACKED_ITEM_IDS = new Set(['base-16','base-32','base-33','min-food-breakfast','min-food-legumes','min-food-protein','min-food-ready','min-food-fruit','min-food-snacks']);
+function stockDefaults(){const o={};for(const group of STOCK_DEFS){o[group.id]=group.products.map(([name,yieldQty],index)=>({id:group.id+'-'+index,name,count:0,yieldQty,expiry:'',lots:[],place:'',note:'',preset:true}));}return o;}
+function stockSafeRows(input){const defaults=stockDefaults();if(!input||typeof input!=='object')return defaults;
+for(const group of STOCK_DEFS){const incoming=input[group.id];if(!Array.isArray(incoming))continue;
+ const arr=[],seen=new Set();for(const x of incoming.slice(0,140)){if(!x||typeof x!=='object')continue;const id=limited(x.id,100);if(!id||seen.has(id))continue;seen.add(id);const entry={id,name:limited(x.name,100)||'Producto',count:Math.floor(num(x.count,0,0,100000)),yieldQty:num(x.yieldQty,1,0.01,1000),expiry:/^\d{4}-\d{2}-\d{2}$/.test(x.expiry||'')?x.expiry:'',place:limited(x.place,180),note:limited(x.note,350),preset:Boolean(x.preset)};entry.lots=Array.isArray(x.lots)?x.lots:[{id:newId(),count:entry.count,expiry:entry.expiry}];rowSync(entry,true);arr.push(entry);}
+ // Preserve defaults absent from the import; imported edits win.
+ for(const d of defaults[group.id])if(!seen.has(d.id))arr.push(d);
+ defaults[group.id]=arr;}
+return defaults;}
+function migrateOldStock(output,input){if(input.stocks&&typeof input.stocks==='object'){output.stocks=stockSafeRows(input.stocks);return;}
+ // Older V4: store numeric quantities in clearly identified legacy rows, never discard source fields.
+ const groupMap={home_water:'home-water',food_breakfast:'home-breakfast',food_legumes:'home-legumes',food_protein:'home-protein',food_ready:'home-ready',food_fruit:'home-fruit',food_snacks:'home-snacks',exit_water:'exit-water',exit_food:'exit-food'};
+ for(const raw of input.items||[]){const group=groupMap[raw?.dynamic||CAT.find(it=>it.id===raw?.id)?.dynamic];if(!group||raw?.owned==null||raw.owned==='')continue;const amount=num(raw.owned,0,0,100000);if(amount<=0)continue;
+ output.stocks[group].push(legacyRow({id:'legacy-'+raw.id,name:'Existencias importadas de versión anterior',count:1,yieldQty:amount,expiry:/^\d{4}-\d{2}-\d{2}$/.test(raw.expiry||'')?raw.expiry:'',place:limited(raw.place,180),note:'Revisa el número de raciones o litros. Cantidad trasladada del campo «Cantidad disponible» de la versión anterior.',preset:false}));}
+}
+
+function baseState(personal){const p=personal?SEED:{};const items=(personal?CAT:STARTER_CAT).map(x=>({...clone(x),status:'revisar',qty:''}));if(personal&&Array.isArray(p.overrides)){for(const it of p.overrides){const x=items.find(z=>z.id===it.id);if(!x)continue;x.status=statusOf(it.status);if(it.qty)x.qty=limited(it.qty,90);if(it.note)x.note=limited(it.note,1200);if(it.scope&&['casa','salida','ambos','coche'].includes(it.scope))x.scope=it.scope;}}
+return {format:'plan-emergencias-familiar',version:6,adults:personal?num(p.adults,2,1,20):1,children:personal?num(p.children,1,0,20):0,days:personal?num(p.days,7,1,60):7,evacDays:personal?num(p.evacDays,3,1,7):3,items,plans:cleanPlans(personal?p.plans:null),family:{meeting:'',alternative:'',contact:'',comms:'',notes:''},pets:[],map:{title:'',image:'',points:[]},stocks:stockDefaults()};}
+function validateState(input){if(!input||typeof input!=='object'||!Array.isArray(input.items)||input.items.length>600)throw Error('La copia no contiene un inventario válido.');const output=baseState(false), byId=new Map(output.items.map(x=>[x.id,x]));const oldV2=Number(input.version)<=2;const ids=new Set();for(const raw of input.items){if(!raw||typeof raw!=='object')continue;let id=limited(raw.id,100)||newId();if(ids.has(id))continue;ids.add(id);const orig=byId.get(id);const item={...raw,...(orig||{}),id,name:limited(raw.name||orig?.name||'Material',140),scope:['casa','salida','ambos','coche'].includes(raw.scope)?raw.scope:'casa',category:(id==='min-food-special'&&raw.category==='Agua y alimentación')?'Salud, higiene y abrigo':(CATS.includes(raw.category)?raw.category:CATS[0]),status:statusOf(raw.status),priority:raw.priority==='opcional'?'opcional':(orig?.priority||'basico'),note:limited(raw.note??orig?.note,1200),qty:limited(raw.qty??raw.quantity,90),owned:(raw.owned==null||raw.owned==='')?null:num(raw.owned,0,0,1000000),expiry:/^\d{4}-\d{2}-\d{2}$/.test(raw.expiry||'')?raw.expiry:'',place:limited(raw.place,180)};if(orig)Object.assign(orig,item);else output.items.push(item);}
+output.adults=num(input.adults,1,1,20);output.children=num(input.children,oldV2?1:0,0,20);output.days=num(input.days,7,1,60);output.evacDays=num(input.evacDays,3,1,7);output.plans=cleanPlans(input.plans);if(input.family&&typeof input.family==='object')for(const k of Object.keys(output.family))output.family[k]=limited(input.family[k],k==='notes'?700:180);
+if(Array.isArray(input.pets))output.pets=input.pets.slice(0,30).filter(x=>x&&['perro','gato'].includes(x.type)).map(x=>({id:limited(x.id||newId(),90),type:x.type,count:num(x.count,1,1,20),weight:num(x.weight,5,.5,120),food:num(x.food,0,0,3000),note:limited(x.note,500)}));
+if(input.map&&typeof input.map==='object'){output.map.title=limited(input.map.title,150);output.map.image=typeof input.map.image==='string'&&/^data:image\/(png|jpeg|webp);base64,/i.test(input.map.image)&&input.map.image.length<2500000?input.map.image:'';if(Array.isArray(input.map.points))output.map.points=input.map.points.slice(0,100).map(x=>({id:limited(x.id||newId(),90),type:limited(x.type,40),name:limited(x.name,100),address:limited(x.address,220)}));}
+migrateOldStock(output,input);output.version=6;return output;}
+let state=baseState(document.documentElement.dataset.edition!=='template');
+try {const existing=localStorage.getItem(KEY);if(existing){const obj=JSON.parse(existing);if([1,2,3,4,5,6].includes(Number(obj?.version)))state=validateState(obj);}} catch(e){console.warn('No se pudo recuperar la copia local',e);}
+let activeTab='casa',activePlan='casa',exitMode='pie',editingItemId=null,editingPetId=null,search='',statusFilter='todos',priorityFilter='todos';
+let expandedGroups=new Set();
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));return true;}catch(e){toast('No se pudo guardar en este navegador: exporta JSON');return false;}}
+let toastTimer;function toast(msg){const n=$('toast');n.textContent=msg;n.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>n.classList.remove('show'),3800);}
+function download(name,content,mime){
+  if(window.AndroidBridge && typeof window.AndroidBridge.beginExport==='function'){
+    try{
+      const data=String(content);
+      window.AndroidBridge.beginExport(String(name),String(mime||'application/octet-stream'));
+      for(let offset=0;offset<data.length;offset+=12000){
+        window.AndroidBridge.appendExport(data.slice(offset,offset+12000));
+      }
+      window.AndroidBridge.finishExport();
+    }catch(error){alert('No se pudo preparar el archivo: '+error.message);}
+    return;
+  }
+const url=URL.createObjectURL(new Blob([content],{type:mime}));const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);}
+function people(){return state.adults+state.children;}
+function updateConfig(){
+  $('adultCount').value=state.adults;$('childCount').value=state.children;$('daysCount').value=state.days;$('evacCount').value=state.evacDays;
+  $('chipEdition').textContent=document.documentElement.dataset.edition==='template'?'Plantilla general':'Inventario personal';
+  $('chipPeople').textContent=`${state.adults} ${state.adults===1?'adulto':'adultos'} y ${state.children} ${state.children===1?'niño':'niños'}`;
+  $('chipDays').textContent=`${state.days} días en casa`;
+  $('summaryTop').textContent=`Agua doméstica orientativa: ${fmt(people()*state.days*4)} L (${people()} personas × ${state.days} días × 4 L/día); puede hacer falta más. Mochilas: ${state.evacDays} días de material transportable.`;
+  $('guideHouseText').innerHTML=`Prepara agua y comida sin cocinar para <strong>${state.days} días</strong>, además de higiene y botiquín. Agua doméstica orientativa: <strong>${fmt(people()*state.days*4)} L</strong>; puede hacer falta más.`;
+  $('guideBagsText').innerHTML=`Prepara <strong>${state.adults} ${state.adults===1?'mochila de adulto':'mochilas de adulto'}</strong> cerca de la salida; material para <strong>${state.evacDays} días</strong>, adaptado al peso. Los niños llevan carga ligera.`;
+}
+
+function scopeMatch(item){if(state.children===0&&['base-11','base-31','base-40','base-43','min-infant-food'].includes(item.id))return false;if(activeTab==='casa')return item.scope==='casa'||item.scope==='ambos';if(exitMode==='pie'&&['base-21','base-22'].includes(item.id)&&item.scope==='ambos')return false;return item.scope==='salida'||item.scope==='ambos'||(exitMode==='coche'&&item.scope==='coche');}
+function qtyText(item){const n=people(),d=state.days,e=state.evacDays,m=n*d*2;
+const legumes=Math.round(m*.25),protein=Math.round(m*.25),prepared=m-legumes-protein;
+switch(item.dynamic){
+case 'home_water':return `Referencia de planificación: ${fmt(n*d*4)} L (${n} personas × ${d} días × 4 L/día), para beber y una higiene muy básica. Puede hacer falta más.`;
+case 'home_food':return `Reserva para ${n} personas × ${d} días. No necesita cocinarse.`;
+case 'food_breakfast':return `${n*d} raciones de desayuno (1 por persona y día).`;
+case 'food_legumes':return `${legumes} raciones de comidas/cenas (propuesta: 25 % de las principales).`;
+case 'food_protein':return `${protein} raciones de comidas/cenas (propuesta: 25 % de las principales).`;
+case 'food_ready':return `${prepared} raciones de comidas/cenas (para completar 2 comidas principales/persona/día).`;
+case 'food_fruit':return `${n*d} porciones orientativas de fruta/verdura para complementar las comidas.`;
+case 'food_snacks':return `${n*d} raciones orientativas de tentempiés.`;
+case 'adult_bags':return `${state.adults} mochilas transportables para adultos.`;
+case 'thermal_blankets':return `${n} mantas térmicas, una por persona.`;
+case 'home_hygiene':return `Higiene y saneamiento para ${n} personas durante ${d} días.`;
+case 'exit_food':return `Orientación: ${n*e*3} raciones pequeñas listas para comer (${n} × ${e} × 3); ajustar al peso que pueda llevar cada persona.`;
+case 'exit_water':return `Llevar la cantidad que se pueda transportar, por ejemplo 1–2 L iniciales por persona si la mochila lo permite; prever reposición segura.`;
+default:return '';}}
+function qtyBrief(it){
+  const n=people(),d=state.days,e=state.evacDays,main=n*d*2,leg=Math.round(main*.25),prot=Math.round(main*.25);
+  const values={home_water:`${fmt(n*d*4)} L orientativos`,home_food:`${d} días · ${n} personas`,food_breakfast:`${n*d} desayunos`,food_legumes:`${leg} raciones`,food_protein:`${prot} raciones`,food_ready:`${main-leg-prot} raciones`,food_fruit:`${n*d} porciones`,food_snacks:`${n*d} tentempiés`,adult_bags:`${state.adults} mochilas`,thermal_blankets:`${n} unidades`,home_hygiene:`${d} días · ${n} personas`,exit_food:`${n*e*3} raciones orientativas`,exit_water:'Lo que puedas transportar'};
+  return values[it.dynamic]||'Según necesidad';
+}
+function statusCounts(items){const a={revisar:0,tengo:0,preparar:0,comprar:0,valorar:0,noaplica:0};for(const x of items)a[x.status]=(a[x.status]||0)+1;return a;}
+function renderTab(){for(const tab of document.querySelectorAll('[data-tab]'))tab.setAttribute('aria-selected',String(tab.dataset.tab===activeTab));$('inventoryScreen').classList.toggle('hidden',!['casa','salida'].includes(activeTab));$('plansScreen').classList.toggle('hidden',activeTab!=='planes');$('petsScreen').classList.toggle('hidden',activeTab!=='mascotas');$('mapScreen').classList.toggle('hidden',activeTab!=='mapas');if(activeTab==='casa'||activeTab==='salida')renderInventory();else if(activeTab==='planes')renderPlans();else if(activeTab==='mascotas')renderPets();else renderMap();}
+function renderInventory(){
+  updateConfig();
+  $('inventoryTitle').textContent=activeTab==='casa'?'Permanecer en casa':'Salir o evacuar';
+  $('inventorySub').textContent=activeTab==='casa'?'Reserva doméstica: básicos primero, mejoras después.':'Mochilas preparadas para salir; cambia entre a pie y en coche.';
+  $('inventoryHow').textContent=activeTab==='casa'
+    ? 'Revisa agua, comida, higiene y demás reservas para los días indicados arriba. Indica cuántos envases tienes o marca cada elemento como listo. Puedes añadir materiales propios con «+ Material».'
+    : 'Prepara lo imprescindible en mochilas que puedas transportar. Selecciona si saldrías a pie o en coche y marca qué está listo y qué queda pendiente.';
+  $('exitModeWrap').hidden=activeTab!=='salida'; $('exitMode').value=exitMode;
+  const relevant=state.items.filter(scopeMatch), counts=statusCounts(relevant);
+  const basics=relevant.filter(x=>x.priority==='basico'&&x.status!=='noaplica');
+  const covered=basics.filter(itemReady).length;
+  $('stats').innerHTML=`<span class="metric ok"><strong>${covered}/${basics.length}</strong> mínimos disponibles</span><span class="metric"><strong>${counts.revisar}</strong> por comprobar</span><span class="metric"><strong>${counts.preparar}</strong> por preparar</span><span class="metric warn"><strong>${counts.comprar}</strong> comprar</span><span class="metric"><strong>${counts.valorar}</strong> valorar</span>`;
+  $('petMini').textContent=state.pets.length?'Mascotas: consulta sus necesidades de comida y agua en la pestaña «Mascotas».':'Si tienes perro o gato, añádelo en la pestaña «Mascotas».';
+  const wanted=relevant.filter(x=>(statusFilter==='todos'||x.status===statusFilter)&&(priorityFilter==='todos'||x.priority===priorityFilter)&&(!search||(x.name+' '+x.note+' '+x.category).toLocaleLowerCase('es').includes(search.toLocaleLowerCase('es'))));
+  const container=$('catalog');container.replaceChildren();
+  const order=activeTab==='casa' ? ['Agua y alimentación','Botiquín y primeros auxilios','Salud, higiene y abrigo','Energía y comunicaciones','Iluminación y herramientas','Documentación y seguridad','Mochilas y transporte'] : ['Mochilas y transporte','Agua y alimentación','Botiquín y primeros auxilios','Salud, higiene y abrigo','Documentación y seguridad','Energía y comunicaciones','Iluminación y herramientas'];
+  for(const category of order){
+    const subset=wanted.filter(x=>x.category===category).sort((a,b)=>(a.priority==='basico'?0:1)-(b.priority==='basico'?0:1));
+    if(!subset.length)continue;
+    const catBasics=relevant.filter(x=>x.category===category&&x.priority==='basico'&&x.status!=='noaplica');
+    const doneBasics=catBasics.filter(itemReady).length;
+    const details=document.createElement('details'); details.className='group';details.dataset.cat=category;
+    details.open=!!search||expandedGroups.has(category);
+    details.addEventListener('toggle',()=>{if(search)return;if(details.open)expandedGroups.add(category);else expandedGroups.delete(category);});
+    const summary=document.createElement('summary');
+    summary.innerHTML=`<span>${esc(catLabel(category))}</span><span class="count">${catBasics.length?`${doneBasics}/${catBasics.length} básicos · `:''}${subset.length} elementos</span>`;
+    details.append(summary);
+    const scroll=document.createElement('div');scroll.className='inventory-scroll';
+    const table=document.createElement('table');table.className='inventory-table';
+    table.innerHTML='<thead><tr><th scope="col">Material</th><th scope="col">Cantidad orientativa</th><th scope="col">Prioridad</th><th scope="col">Estado</th><th scope="col">Acciones</th></tr></thead>';
+    const tbody=document.createElement('tbody');
+    let previousPriority=null;
+    for(const it of subset){
+      if(it.priority!==previousPriority){
+        const separator=document.createElement('tr');separator.className='sectionrow'+(it.priority==='opcional'?' optional-divider':'');
+        separator.innerHTML=`<td colspan="5">${it.priority==='basico'?'Básicos recomendados':'Mejoras y equipamiento adicional'}</td>`;
+        tbody.append(separator);previousPriority=it.priority;
+      }
+      const row=document.createElement('tr');row.className='entry'+(it.priority==='opcional'?' optional':'');row.dataset.id=it.id;
+      const quantity=qtyBrief(it),full=qtyText(it);
+      row.innerHTML=`<td><span class="item-title">${esc(it.name)}</span><button class="info-toggle" type="button" aria-expanded="false" aria-label="Ver indicaciones de ${esc(it.name)}">Info</button></td><td><span class="qty-brief">${esc(quantity)}</span>${it.qty?`<span class="qty-user">Registrado: ${esc(it.qty)}</span>`:''}</td><td><span class="priority-label ${it.priority==='opcional'?'optional':''}">${it.priority==='basico'?'Básico':'Opcional'}</span></td><td><select class="status ${esc(it.status)}" aria-label="Estado de ${esc(it.name)}">${STATUS_ORDER.map(k=>`<option value="${k}" ${k===it.status?'selected':''}>${LABELS[k]}</option>`).join('')}</select></td><td class="align-right"><button class="btn small edit-entry" type="button">Editar</button></td>`;
+      const noteRow=document.createElement('tr');noteRow.className='note-row';noteRow.hidden=true;
+      noteRow.innerHTML=`<td colspan="5"><div class="info-text">${full?`<strong>Orientación:</strong> ${esc(full)}<br>`:''}<strong>Cómo prepararlo:</strong> ${esc(it.note||'Revisar o completar este material según las necesidades familiares.')}</div></td>`;
+      row.querySelector('select').addEventListener('change',ev=>{it.status=ev.target.value;save();renderInventory();});
+      row.querySelector('.edit-entry').addEventListener('click',()=>editItem(it.id));
+      const info=row.querySelector('.info-toggle');
+      info.addEventListener('click',()=>{noteRow.hidden=!noteRow.hidden;info.setAttribute('aria-expanded',String(!noteRow.hidden));info.textContent=noteRow.hidden?'Info':'Cerrar';});
+      tbody.append(row,noteRow);
+    }
+    table.append(tbody); scroll.append(table);details.append(scroll);container.append(details);
+  }
+  if(!wanted.length)container.innerHTML='<div class="empty">No hay materiales con estos filtros.</div>';
+  const suggestions=$('extraSuggestions');suggestions.replaceChildren();
+  for(const id of SUGGESTION_IDS){const it=CAT.find(x=>x.id===id);if(!it||state.items.some(x=>x.id===id))continue;
+    const b=document.createElement('button');b.type='button';b.className='btn small';b.textContent='+ '+it.name.replace(/ \(opcional\)/g,'');
+    b.addEventListener('click',()=>{addSuggestedItem(it);save();renderInventory();});suggestions.append(b);
+  }
+  if(!suggestions.children.length)suggestions.innerHTML='<span class="tip">Puedes añadir otros equipos con «+ Material».</span>';
+}
+
+function editItem(id){editingItemId=id;const it=state.items.find(x=>x.id===id);$('itemFormTitle').textContent=it?'Editar material':'Añadir material';$('editName').value=it?.name||'';$('editScope').value=it?.scope||(activeTab==='casa'?'casa':'salida');$('editDone').checked=it?itemReady(it):false;$('editPriority').value=it?.priority||'basico';$('editCategory').replaceChildren(...CATS.map(c=>{const opt=document.createElement('option');opt.value=c;opt.textContent=catLabel(c);return opt}));$('editCategory').value=it?.category||CATS[0];$('editExpiry').value=it?.expiry||'';syncExpiryPicker('editExpiry');$('editPlace').value=it?.place||'';$('editNote').value=it?.note||'';
+const legacy=it&&(it.qty||it.owned!=null)?[it.qty?'Cantidad textual anterior: '+it.qty:'',it.owned!=null?'Cantidad anterior: '+it.owned:''].filter(Boolean).join(' · '):'';$('legacyNote').hidden=!legacy;$('legacyNote').textContent=legacy?'Dato conservado de versiones anteriores: '+legacy:'';$('deleteItem').hidden=!it;$('itemDialog').showModal();}
+$('itemForm').addEventListener('submit',e=>{e.preventDefault();const prev=state.items.find(x=>x.id===editingItemId);const name=$('editName').value.trim();if(!name)return;const item={id:editingItemId||newId(),name:limited(name,140),scope:$('editScope').value,status:$('editDone').checked?'tengo':'revisar',category:$('editCategory').value,priority:$('editPriority').value,note:limited($('editNote').value,1200),expiry:$('editExpiry').value||'',place:limited($('editPlace').value,180)};
+if(prev)Object.assign(prev,item);else state.items.push(item);save();$('itemDialog').close();renderTab();toast('Material guardado');});
+$('deleteItem').addEventListener('click',()=>{if(!editingItemId||!confirm('¿Eliminar este material del inventario?'))return;state.items=state.items.filter(x=>x.id!==editingItemId);save();$('itemDialog').close();renderInventory();});$('cancelItem').addEventListener('click',()=>$('itemDialog').close());$('newItem').addEventListener('click',()=>editItem(null));
+function renderPlans(){document.querySelectorAll('[data-plan]').forEach(el=>el.classList.toggle('active',el.dataset.plan===activePlan));$('planName').textContent=PLAN_NAMES[activePlan];const plan=state.plans[activePlan];$('planIntro').value=plan.intro;const host=$('steps');host.replaceChildren();if(!plan.steps.length){host.innerHTML='<div class="notice">Este plan está pendiente de definir. Añade instrucciones cortas, una por línea.</div>';}plan.steps.forEach((step,i)=>{const row=document.createElement('div');row.className='step';const numEl=document.createElement('span');numEl.textContent=String(i+1)+'.';const inp=document.createElement('input');inp.className='field';inp.maxLength=220;inp.value=step.text;inp.setAttribute('aria-label',`Paso ${i+1}`);inp.addEventListener('input',()=>{step.text=inp.value;save();});const actions=document.createElement('div');actions.className='inline';for(const [label,delta,title] of [['↑',-1,'Subir paso'],['↓',1,'Bajar paso']]){const b=document.createElement('button');b.type='button';b.className='btn small';b.textContent=label;b.title=title;b.disabled=i+delta<0||i+delta>=plan.steps.length;b.addEventListener('click',()=>{const j=i+delta;[plan.steps[i],plan.steps[j]]=[plan.steps[j],plan.steps[i]];save();renderPlans();});actions.append(b);}const del=document.createElement('button');del.type='button';del.className='btn small warn';del.title='Eliminar paso';del.textContent='×';del.addEventListener('click',()=>{plan.steps.splice(i,1);save();renderPlans();});actions.append(del);row.append(numEl,inp,actions);host.append(row);});
+for(const input of $('familyFields').querySelectorAll('[data-family]'))input.value=state.family[input.dataset.family]||'';}
+function addStep(){const txt=$('stepText').value.trim();if(!txt)return;state.plans[activePlan].steps.push({id:newId(),text:limited(txt,220)});$('stepText').value='';save();renderPlans();}
+$('planSwitch').addEventListener('click',e=>{const b=e.target.closest('[data-plan]');if(!b)return;activePlan=b.dataset.plan;renderPlans();});$('planIntro').addEventListener('input',e=>{state.plans[activePlan].intro=limited(e.target.value,350);save();});$('addStep').addEventListener('click',addStep);$('stepText').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();addStep();}});$('familyFields').addEventListener('input',e=>{const key=e.target.dataset.family;if(key&&Object.hasOwn(state.family,key)){state.family[key]=e.target.value;save();}});
+function petDailyWater(p){return Math.round(p.weight*(p.type==='gato'?50:60)*p.count);}
+function petDailyFood(p){if(p.food>0)return p.food*p.count;const kcal=70*Math.pow(p.weight,.75)*(p.type==='gato'?1.2:1.4);return Math.round(kcal/3.5*p.count);}
+function petTotalsFor(days){return state.pets.reduce((out,p)=>{out.water+=petDailyWater(p)*days;out.food+=petDailyFood(p)*days;return out;},{water:0,food:0});}
+function renderPets(){const house=petTotalsFor(state.days),exit=petTotalsFor(state.evacDays);$('petsTotals').innerHTML=state.pets.length?`<span class="metric">Casa ${state.days} días: <strong>${fmt(house.water/1000)} L</strong> agua + <strong>${fmt(house.food/1000)} kg</strong> pienso</span><span class="metric">Evacuación ${state.evacDays} días: <strong>${fmt(exit.water/1000)} L</strong> agua + <strong>${fmt(exit.food/1000)} kg</strong> pienso</span>`:'<span class="metric">Sin mascotas registradas</span>';
+const h=$('petCards');h.replaceChildren();for(const p of state.pets){const card=document.createElement('div');card.className='box';const food=petDailyFood(p),water=petDailyWater(p);card.innerHTML=`<div class="headerline"><h3>${p.type==='perro'?'🐕 Perro':'🐈 Gato'} · ${p.count} × ${fmt(p.weight)} kg</h3><button type="button" class="btn small">Editar</button></div><p class="tip">Por día (total): ${fmt(water/1000)} L de agua · ${fmt(food)} g de pienso ${p.food?'(ración introducida)':'(estimación)'}</p><p class="tip">${esc(p.note||'Añadir transportín o correa, cartilla, comedero e higiene al preparar el equipo.')}</p>`;card.querySelector('button').addEventListener('click',()=>editPet(p.id));h.append(card);}}
+function editPet(id){editingPetId=id;const p=state.pets.find(x=>x.id===id);$('petFormTitle').textContent=p?'Editar mascota':'Añadir mascota';$('petType').value=p?.type||'perro';$('petCount').value=p?.count||1;$('petWeight').value=p?.weight||5;$('petFood').value=p?.food||'';$('petNote').value=p?.note||'';$('deletePet').hidden=!p;$('petDialog').showModal();}
+$('newPet').addEventListener('click',()=>editPet(null));$('cancelPet').addEventListener('click',()=>$('petDialog').close());$('petForm').addEventListener('submit',e=>{e.preventDefault();const p={id:editingPetId||newId(),type:$('petType').value,count:num($('petCount').value,1,1,20),weight:num($('petWeight').value,5,.5,120),food:num($('petFood').value,0,0,3000),note:limited($('petNote').value,500)};const existing=state.pets.find(x=>x.id===editingPetId);if(existing)Object.assign(existing,p);else state.pets.push(p);save();$('petDialog').close();renderPets();});$('deletePet').addEventListener('click',()=>{if(!editingPetId||!confirm('¿Quitar esta mascota?'))return;state.pets=state.pets.filter(x=>x.id!==editingPetId);save();$('petDialog').close();renderPets();});
+function renderMap(){$('mapTitle').value=state.map.title;$('mapPreview').hidden=!state.map.image;if(state.map.image)$('mapPreview').src=state.map.image;else $('mapPreview').removeAttribute('src');const list=$('poiList');list.replaceChildren();for(const p of state.map.points){const row=document.createElement('div');row.className='tableline';const a=document.createElement('div');a.innerHTML=`<strong>${esc(p.type)}: ${esc(p.name)}</strong><div class="tip">${esc(p.address)}</div>`;const b=document.createElement('button');b.textContent='Quitar';b.className='btn small warn';b.type='button';b.addEventListener('click',()=>{state.map.points=state.map.points.filter(x=>x.id!==p.id);save();renderMap();});row.append(a,b);list.append(row);}if(!state.map.points.length)list.innerHTML='<p class="tip">Aún no hay puntos definidos.</p>';}
+$('mapTitle').addEventListener('input',e=>{state.map.title=limited(e.target.value,150);save();});$('addPoi').addEventListener('click',()=>{const name=$('poiName').value.trim();if(!name)return toast('Escribe el nombre del punto');state.map.points.push({id:newId(),type:$('poiType').value,name:limited(name,100),address:limited($('poiAddress').value.trim(),220)});$('poiName').value='';$('poiAddress').value='';save();renderMap();});
+$('mapFile').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;try{if(!['image/jpeg','image/png','image/webp'].includes(file.type))throw Error('Selecciona JPG, PNG o WebP');if(file.size>10000000)throw Error('El mapa supera 10 MB. Usa una imagen más pequeña.');const url=URL.createObjectURL(file);let img;try{img=new Image();img.src=url;await img.decode();}finally{URL.revokeObjectURL(url);}const ratio=Math.min(1,1500/img.naturalWidth,1500/img.naturalHeight);const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.floor(img.naturalWidth*ratio));canvas.height=Math.max(1,Math.floor(img.naturalHeight*ratio));const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(img,0,0,canvas.width,canvas.height);state.map.image=canvas.toDataURL('image/jpeg',0.76);if(!save())toast('No se pudo guardar el mapa: exporta copia JSON');renderMap();}catch(err){alert('No se pudo incluir el mapa: '+err.message);}finally{e.target.value='';}});
+$('removeMap').addEventListener('click',()=>{if(!state.map.image)return;if(!confirm('¿Quitar la imagen del mapa?'))return;state.map.image='';save();renderMap();});
+function printHead(title,meta){$('paper').innerHTML=`<div class="ph"><small>KIT EMERGENCIA: PLAN FAMILIAR</small><h1>${esc(title)}</h1><div class="printmeta">${esc(meta)}</div></div>`;return $('paper');}
+function printNow(){if(window.AndroidBridge && typeof window.AndroidBridge.printPage==='function'){window.AndroidBridge.printPage();}else{window.print();}}
+function printPlan(){const p=state.plans[activePlan];const out=printHead(PLAN_NAMES[activePlan]+' · Checklist',`${people()} personas · Fecha de revisión: __________`);if(p.intro){const intro=document.createElement('div');intro.className='printnote';intro.textContent=p.intro;out.append(intro);}if(activePlan==='comun'||activePlan==='separados'){const f=document.createElement('div');f.className='printnote';f.innerHTML=`<b>Encuentro principal:</b> ${esc(state.family.meeting||'______________________')}<br><b>Alternativa:</b> ${esc(state.family.alternative||'______________________')}<br><b>Contacto:</b> ${esc(state.family.contact||'______________________')}<br><b>Comunicación:</b> ${esc(state.family.comms||'______________________')}<br><b>Precauciones:</b> ${esc(state.family.notes||'Seguir avisos oficiales; no cruzar zonas peligrosas.')}`;out.append(f);}if(!p.steps.length){const div=document.createElement('p');div.textContent='Pendiente de definir las instrucciones familiares.';out.append(div);}else for(const s of p.steps){const r=document.createElement('div');r.className='printrow';r.innerHTML=`<span class="sq"></span><span>${esc(s.text)}</span>`;out.append(r);}const foot=document.createElement('p');foot.className='printfooter';foot.textContent='112 · Consultar avisos oficiales · No cruzar áreas inundadas · Adjuntar mapas impresos.';out.append(foot);printNow();}
+function printInventory(){const rel=state.items.filter(scopeMatch);const title=activeTab==='casa'?'Casa · Inventario y reservas':'Evacuación · Inventario';const meta=`${people()} personas · ${activeTab==='casa'?state.days+' días en casa':state.evacDays+' días de evacuación'} · Fecha de revisión: __________`;const out=printHead(title,meta);for(const category of CATS){const items=rel.filter(x=>x.category===category);if(!items.length)continue;const sec=document.createElement('div');sec.className='printgroup';sec.innerHTML=`<h2>${esc(catLabel(category))}</h2>`;for(const it of items){const r=document.createElement('div');r.className='printitem';r.innerHTML=`<span class="sq" style="margin-right:7px;vertical-align:middle"></span><b>${esc(it.name)}</b><em>${esc(LABELS[it.status])}</em>${qtyText(it)?`<div class="tip">${esc(qtyText(it))}</div>`:''}`;sec.append(r);}out.append(sec);}printNow();}
+function printMap(){const out=printHead('Mapa y recursos de emergencia',state.map.title||'Zona por definir');if(state.map.image){const i=document.createElement('img');i.className='printmap';i.src=state.map.image;out.append(i);}for(const p of state.map.points){const r=document.createElement('div');r.className='printrow';r.textContent=`${p.type}: ${p.name} — ${p.address}`;out.append(r);}out.insertAdjacentHTML('beforeend','<p class="printfooter">Comprueba accesibilidad y servicios. No utilices rutas inundadas ni entres en zonas prohibidas.</p>');printNow();}
+$('printPlan').addEventListener('click',printPlan);$('printMap').addEventListener('click',printMap);$('printSection').addEventListener('click',()=>{if(activeTab==='planes')printPlan();else if(activeTab==='mapas')printMap();else if(activeTab==='mascotas'){const out=printHead('Mascotas · Reservas','Plan orientativo');for(const p of state.pets){const r=document.createElement('div');r.className='printrow';r.textContent=`${p.count} ${p.type}(s) de ${fmt(p.weight)} kg — ${fmt(petDailyWater(p)/1000*state.days)} L agua y ${fmt(petDailyFood(p)/1000*state.days)} kg pienso / ${state.days} días`;out.append(r);}printNow();}else printInventory();});
+$('downloadPlanTxt').addEventListener('click',()=>{const p=state.plans[activePlan];let t=[PLAN_NAMES[activePlan].toUpperCase(),'Fecha revisión: __________',p.intro,''];if(activePlan==='comun'||activePlan==='separados'){for(const [key,label] of [['meeting','Punto principal'],['alternative','Punto alternativo'],['contact','Contacto'],['comms','Comunicación'],['notes','Advertencias']])t.push(label+': '+state.family[key]);t.push('');}t.push(...p.steps.map(s=>'[ ] '+s.text),'','112 | Seguir avisos oficiales | No cruzar zonas inundadas');download('plan_accion_'+activePlan+'.txt',t.join('\r\n'),'text/plain;charset=utf-8');});
+$('saveBackup').addEventListener('click',()=>{download('copia_emergencias_v5.json',JSON.stringify(state,null,2),'application/json;charset=utf-8');toast('Copia JSON descargada');});$('importBackup').addEventListener('click',()=>$('jsonFile').click());
+$('jsonFile').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>4500000)throw Error('Archivo demasiado grande');const obj=JSON.parse(await f.text());if(obj.format!=='plan-emergencias-familiar'||![1,2,3,4,5,6].includes(Number(obj.version)))throw Error('Formato no compatible (se admiten V1 a V6).');const data=validateState(obj);if(!confirm('Importar sustituirá el inventario, los planes, las mascotas y el mapa de esta copia. ¿Continuar?'))return;state=data;save();updateConfig();renderTab();toast('Datos importados');}catch(err){alert('Error de importación: '+err.message);}finally{e.target.value='';}});
+const reset=document.createElement('button');reset.type='button';reset.className='btn warn';reset.id='resetBackup';reset.textContent='Restablecer';reset.title='Reiniciar esta copia (se pierden datos locales)';$('importBackup').insertAdjacentElement('afterend',reset);reset.addEventListener('click',()=>{if(!confirm('Se perderán tus cambios locales, incluidos mapas y planes. Exporta JSON antes de continuar. ¿Restablecer?'))return;state=baseState(document.documentElement.dataset.edition!=='template');save();updateConfig();renderTab();toast('Copia reiniciada');});
+
+for(const id of ['adultCount','childCount','daysCount','evacCount'])$(id).addEventListener('change',e=>{const cfg={adultCount:['adults',1,20],childCount:['children',0,20],daysCount:['days',1,60],evacCount:['evacDays',1,7]}[id];state[cfg[0]]=Math.round(num(e.target.value,state[cfg[0]],cfg[1],cfg[2]));save();renderTab();});
+document.querySelectorAll('[data-tab]').forEach(btn=>btn.addEventListener('click',()=>{activeTab=btn.dataset.tab;renderTab();}));$('exitMode').addEventListener('change',e=>{exitMode=e.target.value;renderInventory();});$('search').addEventListener('input',e=>{search=e.target.value;renderInventory();});$('statusFilter').addEventListener('change',e=>{statusFilter=e.target.value;renderInventory();});$('priorityFilter').addEventListener('change',e=>{priorityFilter=e.target.value;renderInventory();});
+const exp=document.createElement('button'),coll=document.createElement('button');exp.className=coll.className='btn small';exp.type=coll.type='button';exp.textContent='Expandir';coll.textContent='Plegar';const filterRow=$('newItem').parentNode;filterRow.append(exp,coll);exp.addEventListener('click',()=>{expandedGroups=new Set(CATS);renderInventory();});coll.addEventListener('click',()=>{expandedGroups.clear();renderInventory();});
+updateConfig();renderTab();
+
+/* V4: cuadro de mandos, seguimiento de cantidades y organización por kits. */
+function trackTarget(item){
+  const n=people(), d=state.days, e=state.evacDays, main=n*d*2, leg=Math.round(main*.25), pro=Math.round(main*.25);
+  const byDynamic={home_water:[n*d*4,'L'],food_breakfast:[n*d,'raciones'],food_legumes:[leg,'raciones'],food_protein:[pro,'raciones'],food_ready:[main-leg-pro,'raciones'],food_fruit:[n*d,'porciones'],food_snacks:[n*d,'raciones'],adult_bags:[state.adults,'mochilas'],thermal_blankets:[n,'mantas'],exit_food:[n*e*3,'raciones']};
+  if (byDynamic[item.dynamic])return byDynamic[item.dynamic];
+  // Do not invent official quantities for the rest: let the family choose its own stock.
+  return null;
+}
+function trackExpired(it){if(!it.expiry)return false;const today=new Date();const iso=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;return it.expiry<iso;}
+function itemReady(it){if(it.status==='noaplica'||trackExpired(it))return false;const req=trackTarget(it);if(it.owned!=null&&req&&req[0]>0)return Number(it.owned)>=req[0];return it.status==='tengo';}
+function kitRelevant(kit){return state.items.filter(it=>{
+  if(state.children===0&&['base-11','base-31','base-40','base-43','min-infant-food'].includes(it.id))return false;
+  if(kit==='casa')return it.scope==='casa'||it.scope==='ambos';
+  if(kit==='mochila')return (it.scope==='salida'||it.scope==='ambos')&&!['base-21','base-22'].includes(it.id);
+  return it.scope==='coche';
+});}
+function kitStats(kit){const basics=kitRelevant(kit).filter(x=>(kit==='coche'||x.priority==='basico')&&x.status!=='noaplica'),ready=basics.filter(itemReady).length;return {count:basics.length,ready,percent:basics.length?Math.round(ready*100/basics.length):0};}
+function renderDashboard(){
+ updateConfig();
+ const host=$('dashboardCards');host.replaceChildren();
+ for(const kit of [{id:'casa',label:'Casa',desc:'Reservas domésticas'},{id:'mochila',label:'Mochila',desc:'Para salir a pie'},{id:'coche',label:'Coche',desc:'Extra para el vehículo'}]){
+   const val=kitStats(kit.id),b=document.createElement('button');b.type='button';b.className='dashboard-card';
+   b.innerHTML=`<span class="progress-ring" style="--p:${val.percent}%"><strong>${val.percent}%</strong></span><b>${kit.label}</b><small>${val.count?`${val.count-val.ready} por revisar`:'Sin equipo'}</small>`;
+   b.title=kit.desc;b.addEventListener('click',()=>{activeTab=kit.id==='casa'?'casa':'salida';exitMode=kit.id==='coche'?'coche':'pie';renderTab();window.scrollTo({top:0,behavior:'instant'});});host.append(b);
+ }
+ const pending=state.items.filter(x=>x.priority==='basico'&&x.status!=='noaplica'&&!itemReady(x)&&!(state.children===0&&['base-11','base-31','base-40','base-43','min-infant-food'].includes(x.id)))
+   .sort((a,b)=>{
+     const rank=(x)=>x.category==='Agua y alimentación'?0:x.category==='Botiquín y primeros auxilios'?1:x.category==='Salud, higiene y abrigo'?2:3;
+     return rank(a)-rank(b);
+   });
+ $('pendingCount').textContent=`${pending.length} por revisar`;
+ const pendingHost=$('dashboardPending');pendingHost.replaceChildren();
+ for(const it of pending.slice(0,6)){
+   const b=document.createElement('button');b.type='button';b.innerHTML=`<span>${esc(it.name)}</span><small>${esc(it.scope==='salida'?'Mochila':it.scope==='coche'?'Coche':'Casa')}</small>`;
+   b.addEventListener('click',()=>{activeTab=it.scope==='salida'||it.scope==='coche'?'salida':'casa';exitMode=it.scope==='coche'?'coche':'pie';expandedGroups.add(it.category);renderTab();editItem(it.id);});pendingHost.append(b);
+ }
+ if(!pendingHost.children.length)pendingHost.innerHTML='<p class="tip">Todos los elementos básicos están marcados como disponibles. Comprueba también cantidades y caducidades.</p>';
+}
+const oldRenderInventoryV4=renderInventory;
+renderInventory=function(){oldRenderInventoryV4();
+ for(const row of document.querySelectorAll('#catalog tr.entry')){
+   const it=state.items.find(x=>x.id===row.dataset.id);if(!it)continue;
+   const first=row.cells[0],quantity=row.cells[1],req=trackTarget(it);const check=document.createElement('input');check.type='checkbox';check.className='item-check';check.checked=itemReady(it);check.setAttribute('aria-label','Marcar como disponible: '+it.name);
+   check.addEventListener('change',()=>{it.status=check.checked?'tengo':'revisar';if(check.checked&&req&&it.owned!=null&&it.owned<req[0])it.owned=null;save();renderInventory();});first.prepend(check);
+   if(!req && it.owned==null && !it.expiry && !it.qty)quantity.classList.add('no-quantity');
+   if(it.owned!=null){const label=document.createElement('div');label.className='qty-user';label.textContent=req?`Tienes ${fmt(it.owned)} de ${fmt(req[0])} ${req[1]}`:`Tienes: ${fmt(it.owned)}`;quantity.append(label);
+      if(req&&req[0]>0){const bar=document.createElement('div');bar.className='stock-track';const fill=document.createElement('div');fill.className='stock-fill'+(it.owned>=req[0]?' full':'');fill.style.width=Math.round(Math.min(100,it.owned/req[0]*100))+'%';bar.append(fill);quantity.append(bar);}
+   }
+   if(it.expiry){const exp=document.createElement('span');exp.className=trackExpired(it)?'expires-warning':'qty-user';exp.style.display='block';exp.textContent=trackExpired(it)?'Caducado: '+it.expiry:'Caducidad: '+it.expiry;quantity.append(exp);}
+   const info=row.nextElementSibling?.querySelector('.info-text');if(info&&(it.place||it.owned!=null)){const span=document.createElement('span');span.className='detail-line';span.textContent=[it.place?'Guardado en: '+it.place:'',it.owned!=null?'Existencias: '+fmt(it.owned):''].filter(Boolean).join(' · ');info.append(span);}
+ }
+};
+
+// Reuse all existing screen handlers. Add a simple home and a compact More area.
+const homeScreen=$('startScreen'),moreScreen=$('moreScreen'),nav=document.querySelector('.tabs');
+const homeSetup=$('homeSetup'),kitPanel=document.querySelector('.kit-panel'),guidePanel=document.querySelector('.guide-panel');
+homeScreen.prepend(homeSetup);$('basicKitSlot').append(kitPanel);$('guideSlot').append(guidePanel);
+const toolbar=document.querySelector('.bar');$('moreActions').append(toolbar);
+const oldPetsTab=nav.querySelector('[data-tab="mascotas"]'),oldMapsTab=nav.querySelector('[data-tab="mapas"]');
+const routes=$('moreRoutes');routes.append(oldPetsTab,oldMapsTab);
+for(const b of [oldPetsTab,oldMapsTab]){b.classList.remove('tab');b.classList.add('more-route');}
+const btnHome=document.createElement('button');btnHome.type='button';btnHome.className='tab';btnHome.dataset.tab='inicio';btnHome.textContent='⌂ Inicio';nav.prepend(btnHome);
+nav.querySelector('[data-tab="salida"]').textContent='▣ Mochila';
+const btnMore=document.createElement('button');btnMore.type='button';btnMore.className='tab';btnMore.dataset.tab='mas';btnMore.textContent='☰ Más';nav.append(btnMore);
+btnHome.addEventListener('click',()=>{activeTab='inicio';renderTab();window.scrollTo(0,0);});
+btnMore.addEventListener('click',()=>{activeTab='mas';renderTab();window.scrollTo(0,0);});
+const oldRenderTabV4=renderTab;
+renderTab=function(){
+ homeScreen.classList.toggle('hidden',activeTab!=='inicio');moreScreen.classList.toggle('hidden',activeTab!=='mas');
+ if(activeTab==='inicio'||activeTab==='mas'){
+   $('inventoryScreen').classList.add('hidden');$('plansScreen').classList.add('hidden');$('petsScreen').classList.add('hidden');$('mapScreen').classList.add('hidden');
+   if(activeTab==='inicio')renderDashboard();
+ }else oldRenderTabV4();
+ nav.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===activeTab)));
+ if(typeof lastShownTab!=='undefined'&&lastShownTab!==activeTab)window.scrollTo(0,0);
+ lastShownTab=activeTab;
+};
+var lastShownTab;
+// Show a clean, navigable home screen on every new launch.
+activeTab='inicio';expandedGroups.clear();renderTab();
+
+/* V5: single status and stock by package. All existing legacy item data remains stored. */
+let stockEditingGroup=null,stockEditingId=null;
+const stockOpened=new Set();
+function stockTarget(group){const n=people(),d=state.days,e=state.evacDays,main=n*d*2,leg=Math.round(main*.25),pro=Math.round(main*.25);
+const dynamic={home_water:n*d*4,food_breakfast:n*d,food_legumes:leg,food_protein:pro,food_ready:main-leg-pro,food_fruit:n*d,food_snacks:n*d,exit_water:n,exit_food:n*e*3};return group.dynamic?dynamic[group.dynamic]||0:0;}
+function stockExpired(row){return rowLots(row).some(l=>l.count>0&&lotExpired(l));}
+function stockSum(group){const rows=state.stocks[group.id]||[];return rows.reduce((sum,r)=>sum+rowLots(r).reduce((a,l)=>a+(lotExpired(l)?0:l.count*r.yieldQty),0),0);}
+function stockExpiredCount(group){return (state.stocks[group.id]||[]).reduce((n,r)=>n+rowLots(r).filter(l=>l.count>0&&lotExpired(l)).length,0);}
+function stockReady(group){return stockTarget(group)>0 && stockSum(group)>=stockTarget(group);}
+function isStockLinked(it){return TRACKED_ITEM_IDS.has(it.id)||Boolean(it.dynamic&&TRACKED_BY_DYNAMIC[it.dynamic]);}
+function itemReady(it){if(trackExpired(it))return false;return it.status==='tengo';}
+function stockPercent(group){const target=stockTarget(group);return target>0?Math.min(100,Math.round(stockSum(group)*100/target)):null;}
+function showStockModal(groupId,rowId){const group=STOCK_DEFS.find(g=>g.id===groupId);if(!group)return;stockEditingGroup=groupId;stockEditingId=rowId||null;const row=(state.stocks[groupId]||[]).find(p=>p.id===rowId);$('stockTitle').textContent=row?'Editar producto':'Añadir producto';$('stockName').value=row?.name||'';$('stockYield').value=row?.yieldQty??1;$('stockYieldUnit').textContent=group.unit+' por envase';stockLotsDraft=rowLots(row||{}).map(l=>({id:l.id,count:l.count,expiry:l.expiry}));if(!row&&!stockLotsDraft.length)stockLotsDraft.push({id:newId(),count:1,expiry:''});renderStockLots();$('stockPlace').value=row?.place||'';$('stockNote').value=row?.note||'';$('stockDelete').hidden=!row||Boolean(row.preset);$('stockDialog').showModal();}
+$('stockCancel').addEventListener('click',()=>$('stockDialog').close());
+$('stockForm').addEventListener('submit',ev=>{ev.preventDefault();const group=stockEditingGroup,row=state.stocks[group].find(r=>r.id===stockEditingId);const name=$('stockName').value.trim();if(!name)return;const updated={id:row?.id||newId(),name:limited(name,100),yieldQty:num($('stockYield').value,1,.01,1000),lots:stockLotsDraft.map(l=>({id:l.id,count:l.count,expiry:l.expiry})),place:limited($('stockPlace').value,180),note:limited($('stockNote').value,350),preset:Boolean(row?.preset)};rowSync(updated);
+if(row)Object.assign(row,updated);else{if(state.stocks[group].length>=140)return alert('Has alcanzado el límite de productos de esta categoría.');state.stocks[group].push(updated);}save();$('stockDialog').close();renderTab();});
+$('stockDelete').addEventListener('click',()=>{const arr=state.stocks[stockEditingGroup]||[];const row=arr.find(r=>r.id===stockEditingId);if(!row||row.preset)return;if(!confirm('¿Quitar este producto del inventario?'))return;state.stocks[stockEditingGroup]=arr.filter(r=>r.id!==row.id);save();$('stockDialog').close();renderTab();});
+function stockCounter(group,row,delta){const lots=lotsNormalize(rowLots(row).map(l=>({...l})),false);if(delta>0){const u=lots.find(l=>!l.expiry);if(u)u.count=Math.min(100000,u.count+1);else lots.push({id:newId(),count:1,expiry:''});}else{const t=lots.find(l=>l.count>0);if(t)t.count-=1;}row.lots=lots;rowSync(row);save();renderTab();}
+function renderStocks(){const host=$('stockCatalog');host.replaceChildren();const scope=activeTab==='casa'?'casa':'salida';const groups=STOCK_DEFS.filter(g=>g.scope===scope && (priorityFilter==='todos'||g.priority===priorityFilter) && (!search||(g.name+' '+g.products.map(x=>x[0]).join(' ')+(state.stocks[g.id]||[]).map(x=>x.name).join(' ')).toLocaleLowerCase('es').includes(search.toLocaleLowerCase('es'))) && (statusFilter==='todos'||(statusFilter==='listo'?stockReady(g):!stockReady(g))));
+if(!groups.length)return;
+const title=document.createElement('h3');title.className='stock-title';title.textContent=activeTab==='casa'?'Agua y alimentos (cantidad por envase)':'Agua y alimentos de las mochilas';host.append(title);
+const note=document.createElement('p');note.className='tip';note.textContent='Pulsa + o − para contar envases. Puedes ajustar cuánto contiene cada uno en «Editar» y añadir otros productos. Solo se suma lo no caducado. La cifra «mínimo básico» es lo recomendado para tu hogar; lo que pase de ahí cuenta como extra.';host.append(note);
+for(const g of groups){const all=state.stocks[g.id]||[],t=stockTarget(g),have=stockSum(g),done=t>0&&have>=t;const det=document.createElement('details');det.className='stock-group';det.open=stockOpened.has(g.id);det.addEventListener('toggle',()=>{if(det.open)stockOpened.add(g.id);else stockOpened.delete(g.id)});
+const sum=document.createElement('summary');sum.innerHTML=`<span class="stock-label">${esc(g.name)} ${g.priority==='opcional'?'<small>Opcional</small>':''}</span><span class="stock-brief ${done?'is-ready':''}">${t>0?`<b>${done?'✓ ':''}${fmt(have)} / ${fmt(t)} ${g.unit}</b><small class="stock-basic">${done?(have>t?'básico cubierto · +'+fmt(have-t)+' '+g.unit+' extra':'básico cubierto'):'mínimo básico: '+fmt(t)+' '+g.unit}</small>`:`<b>${fmt(have)} ${g.unit}</b><small class="stock-basic">extra, no cuenta para el mínimo</small>`}</span>${t>0?`<span class="stock-mini" aria-hidden="true"><i style="width:${stockPercent(g)}%"></i></span>`:''}`;det.append(sum);
+const body=document.createElement('div');body.className='stock-body';const oldEntry=state.items.find(it=>it.dynamic===g.dynamic);if(oldEntry&&oldEntry.status==='tengo'&&oldEntry.owned==null&&oldEntry.qty&&!all.some(row=>row.count>0)){const legacy=document.createElement('p');legacy.className='legacy-stock-warning';legacy.textContent='Dato anterior conservado: '+oldEntry.qty+'. Revisa la cantidad en sus envases para calcular el total.';body.append(legacy);}else if(oldEntry&&oldEntry.status==='tengo'&&oldEntry.owned==null&&!all.some(row=>row.count>0)){const legacy=document.createElement('p');legacy.className='legacy-stock-warning';legacy.textContent='Antes estaba marcado «Lo tengo» sin cantidades. Cuenta los envases para comprobar el objetivo.';body.append(legacy);}const line=document.createElement('div');line.className='stock-progress';line.innerHTML=`${t>0?`<small>${done?'Listo':'Pendiente: faltan '+fmt(Math.max(0,t-have))+' '+g.unit}</small>`:'<small>Complemento opcional, no cuenta para mínimos.</small>'}${stockExpiredCount(g)?`<small class="expiry-flag">${stockExpiredCount(g)} lote(s) caducado(s), excluidos de la cantidad.</small>`:''}`;body.append(line);
+ for(const row of all){const r=document.createElement('div');r.className='package-row';const name=document.createElement('div');name.className='package-desc';name.innerHTML=`<strong>${esc(row.name)}</strong><small>${fmt(row.yieldQty)} ${g.unit}/ud.</small>${lotsLine(row)}`;
+const controls=document.createElement('div');controls.className='package-controls';const minus=document.createElement('button');minus.type='button';minus.textContent='−';minus.className='qty-button';minus.title='Quitar una unidad';minus.disabled=row.count===0;minus.addEventListener('click',()=>stockCounter(g,row,-1));const count=document.createElement('span');count.className='package-count';count.textContent=String(row.count);const plus=document.createElement('button');plus.type='button';plus.textContent='+';plus.className='qty-button';plus.title='Añadir una unidad';plus.addEventListener('click',()=>stockCounter(g,row,1));const edit=document.createElement('button');edit.type='button';edit.className='package-edit';edit.textContent='Editar';edit.title='Editar producto, envase, caducidad y ubicación';edit.addEventListener('click',()=>showStockModal(g.id,row.id));controls.append(minus,count,plus,edit);r.append(name,controls);body.append(r);}
+ const footer=document.createElement('div');footer.className='stock-footer';const add=document.createElement('button');add.className='btn small';add.type='button';add.textContent='+ Añadir otro producto';add.addEventListener('click',()=>showStockModal(g.id,null));const help=document.createElement('details');help.className='stock-help';help.innerHTML=`<summary>Consejo</summary><p>${esc(g.help)}</p>`;footer.append(add,help);body.append(footer);det.append(body);host.append(det);}
+}
+function relevantOrdinary(){return state.items.filter(x=>scopeMatch(x)&&!isStockLinked(x));}
+function kitStats(kit){const base=kitRelevant(kit).filter(x=>x.priority==='basico'&&!isStockLinked(x)&&x.status!=='noaplica'),readyBase=base.filter(itemReady).length;
+const groups=STOCK_DEFS.filter(g=>g.priority==='basico'&&(kit==='casa'?g.scope==='casa':kit==='mochila'?g.scope==='salida':false));const readyStock=groups.filter(stockReady).length;const count=base.length+groups.length,ready=readyBase+readyStock;
+return {count,ready,percent:count?Math.round(100*ready/count):0};}
+function renderDashboard(){updateConfig();const host=$('dashboardCards');host.replaceChildren();for(const kit of [{id:'casa',label:'Casa'},{id:'mochila',label:'Mochila'},{id:'coche',label:'Coche'}]){const val=kitStats(kit.id),b=document.createElement('button');b.type='button';b.className='dashboard-card';b.innerHTML=`<span class="progress-ring" style="--p:${val.percent}%"><strong>${val.percent}%</strong></span><b>${kit.label}</b><small>${val.count?`${val.count-val.ready} pendientes`:'Sin equipo'}</small>`;b.addEventListener('click',()=>{activeTab=kit.id==='casa'?'casa':'salida';exitMode=kit.id==='coche'?'coche':'pie';renderTab();window.scrollTo(0,0)});host.append(b);}
+const todo=[];for(const g of STOCK_DEFS.filter(x=>x.priority==='basico'))if(!stockReady(g))todo.push({name:g.name,scope:g.scope,stock:g.id});for(const it of state.items.filter(x=>x.priority==='basico'&&!isStockLinked(x)&&x.status!=='noaplica'&&!itemReady(x)))todo.push({name:it.name,scope:it.scope,id:it.id,category:it.category});
+$('pendingCount').textContent=`${todo.length} pendientes`;
+const pendingHost=$('dashboardPending');pendingHost.replaceChildren();for(const item of todo.slice(0,7)){const b=document.createElement('button');b.type='button';b.innerHTML=`<span>${esc(item.name)}</span><small>${item.scope==='salida'?'Mochila':item.scope==='coche'?'Coche':'Casa'}</small>`;b.addEventListener('click',()=>{activeTab=item.scope==='salida'||item.scope==='coche'?'salida':'casa';exitMode=item.scope==='coche'?'coche':'pie';if(item.stock)stockOpened.add(item.stock);else expandedGroups.add(item.category);renderTab();window.scrollTo(0,0);});pendingHost.append(b);}if(!todo.length)pendingHost.innerHTML='<p class="tip">Todos los básicos están marcados como listos. Revisa fechas y necesidades personales.</p>';
+}
+renderInventory=function renderInventoryV5(){updateConfig();const isHome=activeTab==='casa';$('inventoryTitle').textContent=isHome?'Permanecer en casa':'Salir o evacuar';$('inventorySub').textContent=isHome?'Reservas para quedarse en casa.':'Mochila preparada para salir; puedes comparar a pie o en coche.';$('inventoryHow').textContent='Abre una categoría, indica tus existencias y marca los elementos preparados. El estado es únicamente Listo o Pendiente.';$('exitModeWrap').hidden=isHome;$('exitMode').value=exitMode;
+const raw=relevantOrdinary(),base=raw.filter(x=>x.priority==='basico'&&x.status!=='noaplica'),groups=STOCK_DEFS.filter(g=>g.scope===(isHome?'casa':'salida')&&g.priority==='basico'),done=base.filter(itemReady).length+groups.filter(stockReady).length,count=base.length+groups.length;
+$('stats').innerHTML=`<span class="metric ${count===done?'ok':'warn'}"><strong>${done}/${count}</strong> básicos listos</span><span class="metric"><strong>${count-done}</strong> pendientes</span>`;
+$('petMini').textContent=state.pets.length?'Mascotas: consulta sus reservas de agua y comida en «Más → Mascotas».':'Si tienes animales, añádelos en «Más → Mascotas».';
+renderStocks();const searchTerm=search.toLocaleLowerCase('es');const wanted=raw.filter(x=>(priorityFilter==='todos'||x.priority===priorityFilter)&&(statusFilter==='todos'||(statusFilter==='listo'?itemReady(x):!itemReady(x)))&&(!searchTerm||(x.name+' '+x.note+' '+x.category).toLocaleLowerCase('es').includes(searchTerm)));
+const container=$('catalog');container.replaceChildren();const order=isHome?CATS:['Mochilas y transporte','Botiquín y primeros auxilios','Salud, higiene y abrigo','Documentación y seguridad','Energía y comunicaciones','Iluminación y herramientas','Agua y alimentación'];
+for(const category of order){const entries=wanted.filter(x=>x.category===category).sort((a,b)=>(a.priority==='basico'?0:1)-(b.priority==='basico'?0:1));if(!entries.length)continue;const catBase=raw.filter(x=>x.category===category&&x.priority==='basico'&&x.status!=='noaplica');const ready=catBase.filter(itemReady).length;
+const det=document.createElement('details');det.className='group';det.open=!!search||expandedGroups.has(category);det.addEventListener('toggle',()=>{if(search)return;det.open?expandedGroups.add(category):expandedGroups.delete(category)});const summary=document.createElement('summary');summary.innerHTML=`<span>${esc(catLabel(category))}</span><span class="count">${ready}/${catBase.length} básicos${entries.filter(x=>x.priority==='opcional').length?' · +'+entries.filter(x=>x.priority==='opcional').length+' extra':''}</span>`;det.append(summary);
+const rows=document.createElement('div');rows.className='check-rows';for(const it of entries){const line=document.createElement('div');line.className='check-row';line.dataset.itemId=it.id;line.innerHTML=`<label class="ready-choice"><input type="checkbox" ${itemReady(it)?'checked':''} aria-label="Marcar listo: ${esc(it.name)}"><span>${esc(it.name)}</span></label><span class="ready-state ${itemReady(it)?'done':''}">${itemReady(it)?'✓ Listo':'Pendiente'}</span><button type="button" class="btn small">Editar</button>`;line.querySelector('input').addEventListener('change',ev=>{it.status=ev.target.checked?'tengo':'revisar';save();renderTab();});line.querySelector('button').addEventListener('click',()=>editItem(it.id));rows.append(line);
+if(it.note){const help=document.createElement('details');help.className='check-help';help.innerHTML=`<summary>Información: ${esc(it.name)}</summary><p>${esc(it.note)}</p>`;rows.append(help);}}
+det.append(rows);container.append(det);}
+if(!wanted.length&&statusFilter!=='todos')container.innerHTML='<div class="empty">No hay más materiales con este filtro.</div>';
+const suggestions=$('extraSuggestions');suggestions.replaceChildren();for(const id of SUGGESTION_IDS){const it=CAT.find(x=>x.id===id);if(!it||state.items.some(x=>x.id===id))continue;const b=document.createElement('button');b.type='button';b.className='btn small';b.textContent='+ '+it.name.replace(/ \(opcional\)/g,'');b.addEventListener('click',()=>{addSuggestedItem(it);save();renderTab();});suggestions.append(b);}if(!suggestions.children.length)suggestions.innerHTML='<span class="tip">Puedes añadir materiales con «+ Material».</span>';
+}
+function printInventory(){const home=activeTab==='casa',out=printHead(home?'Casa · Lista de preparación':'Evacuación · Lista de preparación',`${people()} personas · ${home?state.days+' días casa':state.evacDays+' días mochila'}`);
+for(const group of STOCK_DEFS.filter(x=>x.scope===(home?'casa':'salida'))){const section=document.createElement('div');section.className='printgroup';section.innerHTML=`<h2>${esc(group.name)}: ${fmt(stockSum(group))} / ${stockTarget(group)?fmt(stockTarget(group)): '—'} ${group.unit}</h2>`;for(const r of state.stocks[group.id].filter(x=>x.count>0)){const item=document.createElement('div');item.className='printitem';item.textContent=`${r.name}: ${r.count} × ${fmt(r.yieldQty)} ${group.unit}${lotsPrint(r)}${stockExpired(r)&&!lotsPrint(r)?' (caducado)':''}`;section.append(item);}out.append(section);}
+for(const category of CATS){const a=relevantOrdinary().filter(x=>x.category===category);if(!a.length)continue;const section=document.createElement('div');section.className='printgroup';section.innerHTML=`<h2>${esc(catLabel(category))}</h2>`;for(const it of a){const row=document.createElement('div');row.className='printitem';row.innerHTML=`<span class="sq" style="margin-right:7px;vertical-align:middle"></span><b>${esc(it.name)}</b><em>${itemReady(it)?'Listo':'Pendiente'}</em>`;section.append(row);}out.append(section);}window.print();}
+// Replace legacy filter help without deleting any user data.
+$('inventoryFilters').querySelector('#statusFilter').value='todos';
+// The original filter listeners already redraw this view.
+// Safe guard against overwriting unreadable/newer stored data.
+const _originalSaveV5=save;let _storageLocked=false;
+try{const raw=localStorage.getItem(KEY);if(raw){const parsed=JSON.parse(raw);if(![1,2,3,4,5,6].includes(Number(parsed.version))){_storageLocked=true;alert('Hay datos de una versión no compatible. No se sobrescribirán. Guarda primero una copia del archivo original.');}}}catch(e){_storageLocked=true;alert('Los datos guardados no se pueden leer. Se bloqueará su sobrescritura para evitar pérdidas.');}
+save=function(){if(_storageLocked){toast('Guardado bloqueado: existen datos que no se pudieron recuperar');return false;}return _originalSaveV5();};
+// All imports use the existing data validator; successful import unlocks valid storage.
+const _importInput=$('jsonFile');const _newInput=_importInput.cloneNode(true);_importInput.replaceWith(_newInput);_newInput.addEventListener('change',async ev=>{const f=ev.target.files?.[0];if(!f)return;try{if(f.size>4500000)throw Error('Archivo demasiado grande');const obj=JSON.parse(await f.text());if(obj.format!=='plan-emergencias-familiar'||![1,2,3,4,5,6].includes(Number(obj.version)))throw Error('Formato de copia no compatible');const restored=validateState(obj);if(!confirm('Se importarán los datos del archivo y sustituirán los que estén en esta copia. ¿Continuar?'))return;state=restored;_storageLocked=false;save();updateConfig();renderTab();toast('Copia importada');}catch(err){alert('No se pudieron importar los datos: '+err.message)}finally{ev.target.value='';}});
+// Correct the V4 visible version text, but preserve the same localStorage key for compatibility.
+document.querySelector('.kicker').textContent='V5 · Uso local';
+renderTab();
+
+
+// Sugerencias y errores por correo: abre la aplicacion de correo del movil; no se envia nada automaticamente.
+const FEEDBACK_EMAIL=''; // PENDIENTE: poner aqui el correo de contacto; mientras este vacio el panel de sugerencias permanece oculto
+if(FEEDBACK_EMAIL)document.getElementById('feedbackPanel').classList.remove('hidden');
+function openFeedback(kind){
+  if(!FEEDBACK_EMAIL){alert('El correo de contacto todavía no está configurado.');return;}
+  const ver=(window.AndroidBridge&&typeof AndroidBridge.appVersion==='function')?AndroidBridge.appVersion():'web';
+  const subject=(kind==='bug'?'Error':'Sugerencia')+' - Kit Emergencia: Plan Familiar (v'+ver+')';
+  const body=(kind==='bug'?'¿Qué estabas haciendo?\n\n\n¿Qué esperabas que pasara?\n\n\n¿Qué pasó en realidad?\n\n\n':'Escribe aquí tu sugerencia:\n\n\n')+'---\nVersión de la app: '+ver+'\n';
+  window.location.href='mailto:'+FEEDBACK_EMAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+}
+$('feedbackIdea').addEventListener('click',()=>openFeedback('idea'));
+$('feedbackBug').addEventListener('click',()=>openFeedback('bug'));
+
+// Avisos de caducidad (solo en la app Android: usa el puente nativo, sin red ni servidores).
+(function(){
+  const bridge=window.AndroidBridge;if(!bridge||typeof bridge.setExpiryReminders!=='function')return;
+  const KEYR='plan-emergencias-avisos:'+document.documentElement.dataset.installation;
+  let onState=(()=>{try{return localStorage.getItem(KEYR)!=='0';}catch(e){return true;}})();
+  const isOn=()=>onState;
+  const setOn=v=>{onState=v;try{localStorage.setItem(KEYR,v?'1':'0');}catch(e){}};
+  function collect(){const out=[];
+    for(const g of Object.keys(state.stocks||{}))for(const row of state.stocks[g])for(const l of rowLots(row))if(l.count>0&&l.expiry)out.push({id:l.id,name:row.name,expiry:l.expiry,count:l.count});
+    for(const it of state.items)if(it.expiry&&it.status!=='noaplica')out.push({id:it.id,name:it.name,expiry:it.expiry,count:1});
+    return out;}
+  let timer=null;
+  function push(){try{bridge.setExpiryReminders(isOn(),JSON.stringify(collect()));}catch(e){}}
+  function schedulePush(){clearTimeout(timer);timer=setTimeout(push,600);}
+  const panel=$('reminderPanel'),box=$('reminderOn'),status=$('reminderStatus');
+  panel.classList.remove('hidden');
+  function refresh(){box.checked=isOn();let msg;
+    if(!isOn())msg='Avisos desactivados.';
+    else if(!bridge.notificationsAllowed())msg='Android tiene desactivadas las notificaciones de esta app. Actívalas en «Ajustes de notificaciones» para recibir avisos.';
+    else msg='Recibirás una notificación (sobre las 10:00) cuando un producto con fecha esté a 30 días o menos de caducar, y otra si ya ha caducado.';
+    status.textContent=msg;}
+  box.addEventListener('change',()=>{setOn(box.checked);if(box.checked)bridge.requestNotifications();push();setTimeout(refresh,800);});
+  $('reminderTest').addEventListener('click',()=>{if(!bridge.notificationsAllowed()){bridge.requestNotifications();toast('Permite las notificaciones y pulsa de nuevo');}else bridge.testReminder();setTimeout(refresh,800);});
+  $('reminderSettings').addEventListener('click',()=>bridge.openNotificationSettings());
+  const baseSave=save;save=function(){const ok=baseSave.apply(this,arguments);schedulePush();return ok;};
+  const baseRender=renderTab;renderTab=function(){baseRender.apply(this,arguments);if(activeTab==='mas')refresh();};
+  refresh();push();
+})();
+
+// Android: pass optional official-resource links to Android's normal external browser.
+// With no AndroidBridge, this extra handler is also harmless in an ordinary browser.
+if(window.AndroidBridge){
+  document.addEventListener('click',function(event){
+    const link=event.target.closest && event.target.closest('a[href]');
+    if(link && /^https?:/i.test(link.href)){
+      event.preventDefault();
+      window.location.href=link.href;
+    }
+  });
+}
+</script><script>
+/* Version web: funcionamiento sin conexion, almacenamiento persistente y aviso de instalacion en iPhone. */
+(function(){
+  if('serviceWorker' in navigator && location.protocol.indexOf('http')===0){
+    window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});
+  }
+  try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist();}catch(e){}
+  var ios=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  var standalone=window.navigator.standalone===true||(window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches);
+  var KEY='kit-web-aviso-instalar',seen=false;
+  try{seen=localStorage.getItem(KEY)==='1';}catch(e){}
+  if(ios&&!standalone&&!seen){
+    var d=document.createElement('div');
+    d.style.cssText='background:#fff6e8;border-bottom:2px solid #e3b04b;color:#4a3410;padding:12px 14px;font-size:.88rem;line-height:1.45';
+    d.innerHTML='<strong>Instala la app para no perder tus datos.</strong> En Safari pulsa <b>Compartir</b> (el cuadrado con la flecha) → <b>Añadir a pantalla de inicio</b>, y usa siempre ese icono. Safari y el icono guardan los datos por separado: empieza a usar la app directamente desde el icono. Haz copias JSON de vez en cuando (pestaña Más).<div style="margin-top:8px"><button type="button" class="btn small">Entendido</button></div>';
+    d.querySelector('button').addEventListener('click',function(){try{localStorage.setItem(KEY,'1');}catch(e){}d.remove();});
+    document.body.insertBefore(d,document.body.firstChild);
+  }
+})();
+</script></body></html>

@@ -1,0 +1,15 @@
+{
+  "name": "Kit Emergencia: Plan Familiar",
+  "short_name": "Kit Familiar",
+  "description": "Prepara el kit de emergencia de tu familia. Funciona sin conexión; los datos se quedan en tu dispositivo.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#173b50",
+  "theme_color": "#173b50",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
